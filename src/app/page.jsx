@@ -265,7 +265,7 @@ function MainComponent() {
                 Additionally, Taiwan is located approximately 160 kilometers off the southeastern coast of mainland China and is situated within what is known as the "first island chain." This region holds strategic importance for the United States, and there are concerns that if China were to unify with Taiwan, it could significantly enhance its influence in the Western Pacific, potentially threatening U.S. military bases located as far away as Guam and Hawaii. Western experts have warned that if China gains control over Taiwan, it would acquire one of the world’s most critical industries, thereby gaining substantial economic and military power. Conversely, China maintains that its intentions are purely peaceful, advocating for a harmonious unification.
                 </p>
                 <p className="mb-4">
-                In this study, I employ the National Cyber Power Index (NCPI), structured by Cyber Intent Index (CII) and Cyber Capability Index(CCI) to conduct a comparative analysis of cyber capabilities among Japan, China, Taiwan, and the United States, focusing specifically on date from 2024. By quantifying the by the cyber capabilities of these four nations., I aim to assess Taiwan’s resilience against cyber threats. The results indicate that <strong>(台湾の結果を入れて)</strong>.
+                In this study, I employ the National Cyber Power Index (NCPI), structured by the Cyber Intent Index (CII) and Cyber Capability Index (CCI), to conduct a comparative analysis of cyber capabilities among Japan, China, Taiwan, and the United States, focusing specifically on data from 2024. This study utilizes these two key indices to assess the severity and intent behind major cyber incidents. By analyzing these incidents and mapping them to NCPI objectives, I aim to understand Taiwan's strengths and vulnerabilities in its cybersecurity strategy. The results indicate that <strong>(台湾の結果を入れて)</strong>.
                 </p>
               </>
             )}
@@ -336,70 +336,98 @@ function MainComponent() {
           </p>
         </>
       )}
-
       {chapter.id === "chapter3" && (
         <>
-
-          <h4>3.1 National Cyber Power Index Framework</h4>
+          <h4>3.1 Incident-Based Evaluation</h4>
           <p className="mb-4">
-            The National Cyber Power Index (NCPI) provides a comprehensive framework to assess a country’s cyber capabilities. It categorizes cyber power into eight strategic objectives:
-          </p>
-          <ol className="list-decimal ml-8 mb-4">
-            <li>Surveilling and Monitoring Domestic Groups: The ability to surveil and monitor citizens and domestic entities for intelligence purposes.</li>
-            <li>Strengthening and Enhancing National Cyber Defenses: Defending against cyberattacks, particularly those targeting critical infrastructure.</li>
-            <li>Controlling and Manipulating the Information Environment: Influencing or controlling information flows within and outside the country.</li>
-            <li>Foreign Intelligence Collection for National Security: Gathering intelligence from foreign actors through cyber means.</li>
-            <li>Growing National Cyber and Commercial Technology Competence: Developing commercial cyber technologies and growing digital infrastructure.</li>
-            <li>Destroying or Disabling an Adversary’s Infrastructure: Cyberattacks aimed at disabling or destroying foreign critical infrastructure.</li>
-            <li>Defining International Cyber Norms: Setting global cyber standards and norms to influence international cyber governance.</li>
-            <li>Amassing Wealth and Extracting Cryptocurrency: Engaging in cyber activities aimed at acquiring wealth, including cryptocurrency theft.</li>
-          </ol>
-          <p className="mb-4">
-            Each cyber incident in this study is evaluated based on its relevance to one or more of these objectives, assigning weighted scores to measure the overall impact on Taiwan’s national cybersecurity.
-          </p>
-
-          <h4>3.2 Incident-Based Evaluation</h4>
-          <p className="mb-4">
-            To measure the severity of each incident, two indices are applied:
+            To evaluate the impact of each incident, we use two indices:
           </p>
           <ul className="list-disc ml-8 mb-4">
-            <li><strong>Cyber Capability Index (CCI):</strong> Measures the technical capability of the cyber operation.</li>
-            <li><strong>Cyber Intent Index (CII):</strong> Measures the intent and strategic impact of the operation.</li>
+            <li><strong>Cyber Capability Index (CCI):</strong> This index quantifies the technical capability demonstrated during the cyber operation.</li>
+            <li><strong>Cyber Intent Index (CII):</strong> This index assesses the strategic intent and broader impact of the operation.</li>
           </ul>
           <p className="mb-4">
-            Both CCI and CII are rated on a scale of 0.1 to 1.0, where 1.0 represents maximum impact. Each incident is mapped to the NCPI objectives, and the final score is calculated by aggregating the weighted impacts of each incident across multiple objectives.
+            Both indices are scored on a scale from 0.1 to 1.0, with 1.0 representing the highest possible level of capability or intent. For each cyber incident, the final Weighted Score is calculated by multiplying the CCI and CII values. In cases where incidents are linked to multiple NCPI objectives, a weighting factor is applied to ensure the relevance of each objective is accounted for. The formula is as follows:
           </p>
-          <h4>3.3 Data Sources</h4>
-          <p className="mb-4">
-            The data for this study comes from two primary sources:
+          <p className="mb-4 text-center">
+            Weighted Score = (CCI × CII) × Weight
           </p>
-          <ul className="list-disc ml-8 mb-4">
-            <li><strong>112年度國家資通安全情勢報告:</strong> A comprehensive report on Taiwan’s cybersecurity incidents and threats, documenting key cyber events affecting Taiwan in recent years.</li>
-            <li><strong>CSIS Significant Cyber Incidents Database:</strong> A timeline of major cyber incidents affecting nations globally, including Taiwan.</li>
-          </ul>
           <p className="mb-4">
-            These sources provide key data on Taiwan's exposure to cyber threats and allow for detailed mapping to the NCPI objectives.
+            For example, if the CCI of a particular operation is 0.7, the CII is 0.8, and the weight for a specific objective is 70%, the final score would be: 0.7 × 0.8 × 0.7 = 0.392. The sum of these weighted scores across all incidents and objectives provides an aggregate view of a nation’s cyber resilience and capabilities.
           </p>
 
-          <h4>3.4 Justification for the Selected Index and Consideration of Alternatives</h4>
+          <h4>3.3 National Cyber Power Index Framework</h4>
           <p className="mb-4">
-            In this study, the National Cyber Power Index (NCPI) was selected as the primary analytical framework for several key reasons. Firstly, NCPI is uniquely positioned to evaluate cyber power through eight national objectives—including surveillance and monitoring, strengthening national cyber defenses, information manipulation, foreign intelligence collection, growth in cyber and commercial technology competence, destruction or disabling of adversarial infrastructure, defining international cyber norms, and amassing wealth or extracting cryptocurrency. These objectives comprehensively cover the diverse aspects of modern cyber strategies, making NCPI the most suitable for the research aims, particularly in assessing military cyber capabilities.
+            In this study, the National Cyber Power Index (NCPI) framework is utilized to evaluate the cyber capabilities of Taiwan in comparison with other nations such as China, Japan, and the United States. While the NCPI provides a comprehensive method for assessing cyber power through the use of the Cyber Capability Index (CCI) and Cyber Intent Index (CII), this research introduces a modified approach by applying weighted scores to better reflect Taiwan's specific strategic priorities in the context of its national security.
+          </p>
+
+          <h4>3.3.1 NCPI Formula Overview</h4>
+          <p className="mb-4">
+            The original NCPI formula is expressed as:
+          </p>
+          <p className="mb-4 text-center">
+            <img src="./images/ncpi.png" alt="NCPI Formula" />
+          </p>    
+          <p className="mb-4">
+            This formula aggregates the product of capability and intent for each of the eight key objectives that define national cyber power:
+          </p>
+          <ul className="list-decimal ml-8 mb-4">
+            <li>Surveilling and Monitoring Domestic Groups</li>
+            <li>Strengthening and Enhancing National Cyber Defenses</li>
+            <li>Controlling and Manipulating the Information Environment</li>
+            <li>Foreign Intelligence Collection for National Security</li>
+            <li>Growing National Cyber and Commercial Technology Competence</li>
+            <li>Destroying or Disabling an Adversary’s Infrastructure</li>
+            <li>Defining International Cyber Norms</li>
+            <li>Amassing Wealth and Extracting Cryptocurrency</li>
+          </ul>
+
+          <h4>3.3.2 Introduction of Weighted Scores</h4>
+          <p className="mb-4">
+            Given Taiwan’s geopolitical situation and its focus on specific strategic threats, particularly from neighboring China, this study proposes a weighted score approach. This approach emphasizes certain objectives over others, particularly those more relevant to Taiwan's national defense and economic stability.
+          </p>
+          <p className="mb-4 text-center">
+            Weighted Score = (CCI × CII) × Weight
           </p>
           <p className="mb-4">
-            Other indices, such as the Cybersecurity Capacity Maturity Model (CMM) and the Cyber Readiness Index (CRI), were considered but ultimately deemed less appropriate for this study. These indices focus primarily on cybersecurity maturity and preparedness, which, while valuable, do not provide a holistic assessment of a nation’s cyber power. Specifically, they lack sufficient emphasis on military cyber capabilities and offensive operations, making them less relevant for the comparative analysis of Japan, the United States, China, and Taiwan in the context of the Taiwan situation.
+            Where:
+            <ul className="list-disc ml-8 mb-4">
+              <li><strong>CCI:</strong> Measures the technical capabilities of Taiwan in each cyber operation.</li>
+              <li><strong>CII:</strong> Measures the strategic importance or intent behind these operations.</li>
+              <li><strong>Weight:</strong> Reflects the relative importance of each objective in Taiwan’s national security context.</li>
+            </ul>
+            For example, in Taiwan's case, objectives such as Foreign Intelligence Collection for National Security and Strengthening and Enhancing National Cyber Defenses are given higher weights due to the nation's focus on defending against foreign cyber espionage and protecting critical infrastructure.
+          </p>
+
+          <h4>3.3.3 Justification for Weighted Approach</h4>
+          <p className="mb-4">
+            The introduction of weighted scores allows this study to prioritize the cyber objectives that matter most to Taiwan. While the original NCPI formula assumes that all objectives are equally important for national cyber power, this research recognizes that the relevance of each objective can vary significantly depending on the country in question.
+          </p>
+
+          <h4>3.3.4 Impact of Weighted Scores on Results</h4>
+          <p className="mb-4">
+            The weighted approach produces different results compared to the equal-weight NCPI calculation. When weighted scores are applied, Taiwan's ranking improves in areas like Cyber Defense and Foreign Intelligence Collection, reflecting its concentrated efforts in these domains.
+          </p>
+          <h4>3.3.5 Impact of Weighted Scores on Results</h4>
+          <p className="mb-4">
+            <strong>最後に作成</strong>
+          </p>
+
+          <h4>3.3.6 Validation and Implications</h4>
+          <p className="mb-4">
+            The use of weighted scores is validated by Taiwan's recent national cyber defense initiatives, which prioritize defending critical infrastructure and countering foreign espionage. This approach not only aligns with Taiwan’s national security strategy but also provides a framework that can be applied to other nations with similar geopolitical concerns. 
           </p>
           <p className="mb-4">
-            The Global Cybersecurity Index (GCI) was also evaluated as a potential framework. However, GCI is primarily concerned with assessing internal cybersecurity resilience and defense measures, and it does not adequately address the multifaceted nature of cyber power. GCI's exclusion of key indicators related to military cyber operations, intelligence gathering, and offensive capabilities limits its applicability to this study, which requires a more comprehensive evaluation of national cyber power.
+            The weighted score methodology enables more precise and meaningful comparisons between nations by accounting for the different strategic priorities that influence each nation's cyber power. By modifying the original NCPI framework to introduce weighted scores, this study offers a more focused and context-sensitive analysis of Taiwan's cybersecurity.
           </p>
           <p className="mb-4">
-            The Cyber Capabilities and National Power (CCNP) index was recognized for its qualitative assessment of national cyber ecosystems. However, the absence of a scoring or ranking system renders it unsuitable for the quantitative comparative analysis pursued in this research. While CCNP provides a valuable qualitative analysis of a nation’s cyber capabilities, it does not focus on specific national objectives as NCPI does, which is crucial for this study's objectives.
-          </p>
-          <p className="mb-4">
-            Given these considerations, NCPI was determined to be the most appropriate framework for this research. Its ability to comprehensively evaluate the cyber power of Japan, the United States, China, and Taiwan, particularly in relation to military capabilities, makes it the optimal choice for the comparative analysis of national cyber strategies in the context of the Taiwan situation.
+            The weighted approach ensures that the areas most critical to Taiwan’s defense are emphasized, providing a clearer understanding of its capabilities and vulnerabilities. This adjustment also facilitates more accurate comparisons with other nations, such as China, the United States, and Japan, by reflecting the unique challenges that Taiwan faces in the cyber domain.
           </p>
         </>
       )}
 
+
+      
       {chapter.id === "chapter4" && (
         <>
           {/* <h3>4. Analysis and Findings</h3> */}
