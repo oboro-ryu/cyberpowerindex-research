@@ -1,6 +1,98 @@
 "use client";
 import React from "react";
 
+/**/
+// Define the AggregationComponent separately
+function AggregationComponent() {
+  const [objectiveData, setObjectiveData] = React.useState([
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.8, weight: 1.0 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.7, CII: 0.7, weight: 1.0 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.6, CII: 0.5, weight: 1.0 },
+    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.4, CII: 0.4, weight: 1.0 },
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.6, CII: 0.6, weight: 1.0 },
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.8, CII: 0.8, weight: 0.7 },
+    { objective: "Surveilling and Monitoring Domestic Groups", CCI: 0.7, CII: 0.7, weight: 0.3 },
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.7, weight: 0.6 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.6, CII: 0.6, weight: 0.4 },
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.8, weight: 0.7 },
+    { objective: "Amassing Wealth and/or Extracting Cryptocurrency", CCI: 0.5, CII: 0.6, weight: 0.3 },
+    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.4, CII: 0.6, weight: 0.6 },
+    { objective: "Surveilling and Monitoring Domestic and International Groups", CCI: 0.3, CII: 0.5, weight: 0.4 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.7, weight: 0.7 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.6, weight: 0.3 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.8, CII: 0.7, weight: 0.6 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.7, CII: 0.6, weight: 0.4 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.7, weight: 0.6 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.6, weight: 0.4 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.7, weight: 0.7 },
+    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.6, CII: 0.6, weight: 0.3 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.7, CII: 0.6, weight: 0.6 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.6, CII: 0.5, weight: 0.4 },
+    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.6, CII: 0.7, weight: 0.6 },
+    { objective: "Surveilling and Monitoring Domestic Groups", CCI: 0.5, CII: 0.6, weight: 0.4 },
+    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.7, CII: 0.6, weight: 0.5 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.6, CII: 0.7, weight: 0.5 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.7, weight: 0.7 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.6, weight: 0.3 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.7, CII: 0.7, weight: 0.7 },
+    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.6, CII: 0.6, weight: 0.3 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.8, weight: 0.7 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.6, weight: 0.3 },
+    { objective: "Surveilling and Monitoring Domestic Groups", CCI: 0.5, CII: 0.5, weight: 1.0 }
+  ]);
+
+  // Function to calculate average weighted scores for each objective
+  const calculateAverageWeightedScores = () => {
+    const groupedData = {};
+    const countData = {};
+
+    objectiveData.forEach(({ objective, CCI, CII, weight }) => {
+      const weightedScore = CCI * CII * weight;
+      if (groupedData[objective]) {
+        groupedData[objective] += weightedScore;
+        countData[objective] += 1; // Count the number of times the objective appears
+      } else {
+        groupedData[objective] = weightedScore;
+        countData[objective] = 1;
+      }
+    });
+
+    // Calculate the average by dividing the summed score by the count
+    const averagedScores = {};
+    for (const objective in groupedData) {
+      averagedScores[objective] = groupedData[objective] / countData[objective];
+    }
+
+    return averagedScores;
+  };
+
+  const averagedScores = calculateAverageWeightedScores();
+
+  return (
+    <div>
+      <h2>Average Weighted Scores by Objective</h2>
+      <table className="w-full table-auto border-collapse border border-gray-300 mb-4">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="border border-gray-300 px-4 py-2">Objective</th>
+            <th className="border border-gray-300 px-4 py-2">Average Weighted Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(averagedScores).map(([objective, score]) => (
+            <tr key={objective}>
+              <td className="border border-gray-300 px-4 py-2">{objective}</td>
+              <td className="border border-gray-300 px-4 py-2">{score.toFixed(3)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+/*------*/
+
 function MainComponent() {
   const [selectedChapter, setSelectedChapter] = React.useState("");
   const [showAllSections, setShowAllSections] = React.useState(true);
@@ -20,8 +112,12 @@ function MainComponent() {
     { id: "chapter4_2_7", name: "4.2.7 Defining International Cyber Norms and Technical Standards" },
     { id: "chapter4_2_8", name: "4.2.8 Amassing Wealth and Extracting Cryptocurrency" },
     { id: "chapter5_1", name: "5.1 Results and Calculations For Taiwan" },
-    { id: "chapter5_2", name: "5.2 Results and Calculations For Chaina" },
+    { id: "chapter5_2", name: "5.2 Results and Calculations For China" },
+    { id: "chapter6_1", name: "6.1 Cyber Power Index For Taiwan" },  
+  
+
   ];
+
 
   const handleChapterChange = (chapterId) => {
     setSelectedChapter(chapterId);
@@ -32,6 +128,7 @@ function MainComponent() {
     setSelectedChapter("");
     setShowAllSections(true);
   };
+
 
   return (
     <div className="container mx-auto p-4 font-sans">
@@ -91,6 +188,8 @@ function MainComponent() {
                 : "hidden"
             }`}
           >
+
+
             <h2 className="text-xl font-semibold mb-2">{chapter.name}</h2>
             {chapter.id === "abstract" && (
               <>
@@ -2305,6 +2404,9 @@ function MainComponent() {
               </ul>
               </>
             )}
+      
+      {chapter.id === "chapter6_1" && <AggregationComponent />}
+
           </section>
         ))}
       </div>
