@@ -17,7 +17,7 @@ function AggregationComponent() {
     { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.8, weight: 0.7 },
     { objective: "Amassing Wealth and/or Extracting Cryptocurrency", CCI: 0.5, CII: 0.6, weight: 0.3 },
     { objective: "Controlling and Manipulating the Information Environment", CCI: 0.4, CII: 0.6, weight: 0.6 },
-    { objective: "Surveilling and Monitoring Domestic and International Groups", CCI: 0.3, CII: 0.5, weight: 0.4 },
+    { objective: "Surveilling and Monitoring Domestic Groups", CCI: 0.3, CII: 0.5, weight: 0.4 },
     { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.7, weight: 0.7 },
     { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.6, weight: 0.3 },
     { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.8, CII: 0.7, weight: 0.6 },
