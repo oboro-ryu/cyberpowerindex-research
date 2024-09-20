@@ -259,20 +259,13 @@ function MainComponent() {
             {chapter.id === "abstract" && (
               <>
                 <p className="mb-4">
-                  This research evaluates Taiwan's cybersecurity strength by
-                  analyzing specific cyber incidents through the National Cyber
-                  Power Index (NCPI) framework. Taiwan, a global hub for
-                  semiconductor manufacturing, is frequently targeted by
-                  state-sponsored cyberattacks, primarily from China, North Korea,
-                  and Russia. These attacks range from foreign intelligence
-                  collection to critical infrastructure sabotage. By assessing
-                  Taiwan’s cyber power in relation to over 20 nations using NCPI’s
-                  Cyber Intent Index (CII) and Cyber Capability Index (CCI), this
-                  study quantifies Taiwan’s resilience against cyber threats. The
-                  results indicate that while Taiwan demonstrates moderate
-                  resilience, critical vulnerabilities remain in defending its
-                  commercial technology sector and countering advanced persistent
-                  threats (APT).
+                Taiwan is a global hub for semiconductor manufacturing, with its products serving as essential components in various electronic devices used in daily life, including smartphones, laptops, and gaming consoles. Notably, Taiwan Semiconductor Manufacturing Company (TSMC) accounts for over half of the global semiconductor market as a leading foundry, underscoring its profound influence. Therefore, Taiwan's stability is considered critically important for the global economy.
+                </p>
+                <p className="mb-4">
+                Additionally, Taiwan is located approximately 160 kilometers off the southeastern coast of mainland China and is situated within what is known as the "first island chain." This region holds strategic importance for the United States, and there are concerns that if China were to unify with Taiwan, it could significantly enhance its influence in the Western Pacific, potentially threatening U.S. military bases located as far away as Guam and Hawaii. Western experts have warned that if China gains control over Taiwan, it would acquire one of the world’s most critical industries, thereby gaining substantial economic and military power. Conversely, China maintains that its intentions are purely peaceful, advocating for a harmonious unification.
+                </p>
+                <p className="mb-4">
+                In this study, I employ the National Cyber Power Index (NCPI), structured by Cyber Intent Index (CII) and Cyber Capability Index(CCI) to conduct a comparative analysis of cyber capabilities among Japan, China, Taiwan, and the United States, focusing specifically on date from 2024. By quantifying the by the cyber capabilities of these four nations., we aim to assess Taiwan’s resilience against cyber threats. The results indicate that <strong>(台湾の結果を入れて)</strong>.
                 </p>
               </>
             )}
