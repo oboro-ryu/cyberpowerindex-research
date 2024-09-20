@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-/**/
+/*--6.1 Cyber Power Index For Taiwan--*/
 // Define the AggregationComponent separately
 function AggregationComponent() {
   const [objectiveData, setObjectiveData] = React.useState([
@@ -93,6 +93,72 @@ function AggregationComponent() {
 
 /*------*/
 
+
+/*--6.2 Cyber Power Index For China--*/
+function ChinaAggregationComponent() {
+  const [chinaObjectiveData, setChinaObjectiveData] = React.useState([
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.7, CII: 0.6, weight: 0.7, weightedScore: 0.7 * 0.6 * 0.7 },
+    { objective: "Surveilling and Monitoring Domestic Groups", CCI: 0.5, CII: 0.5, weight: 0.3, weightedScore: 0.5 * 0.5 * 0.3 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.6, CII: 0.7, weight: 1.0, weightedScore: 0.6 * 0.7 * 1 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.6, CII: 0.6, weight: 1.0, weightedScore: 0.6 * 0.6 * 1 },
+    { objective: "Defining International Cyber Norms and Technical Standards", CCI: 0.7, CII: 0.7, weight: 1.0, weightedScore: 0.7 * 0.7 * 1 },
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.7, CII: 0.8, weight: 1.0, weightedScore: 0.7 * 0.8 * 1 },
+    { objective: "Destroying or Disabling an Adversary’s Infrastructure and Capabilities", CCI: 0.8, CII: 0.7, weight: 1.0, weightedScore: 0.8 * 0.7 * 1 },
+    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.6, CII: 0.5, weight: 1.0, weightedScore: 0.6 * 0.5 * 1 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.7, weight: 1.0, weightedScore: 0.7 * 0.7 * 1 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.6, CII: 0.6, weight: 1.0, weightedScore: 0.6 * 0.6 * 1 }
+  ]);
+
+  // Function to calculate the average weighted scores for China objectives
+  const calculateChinaAverageWeightedScores = () => {
+    const groupedData = {};
+    const countData = {};
+
+    chinaObjectiveData.forEach(({ objective, CCI, CII, weight }) => {
+      const weightedScore = CCI * CII * weight;
+      if (groupedData[objective]) {
+        groupedData[objective] += weightedScore;
+        countData[objective] += 1;
+      } else {
+        groupedData[objective] = weightedScore;
+        countData[objective] = 1;
+      }
+    });
+
+    // Calculate the average by dividing the summed score by the count
+    const averagedScores = {};
+    for (const objective in groupedData) {
+      averagedScores[objective] = groupedData[objective] / countData[objective];
+    }
+
+    return averagedScores;
+  };
+
+  const chinaAveragedScores = calculateChinaAverageWeightedScores();
+  return (
+    <div>
+      <h2>Average Weighted Scores by Objective (China)</h2>
+      <table className="w-full table-auto border-collapse border border-gray-300 mb-4">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="border border-gray-300 px-4 py-2">Objective</th>
+            <th className="border border-gray-300 px-4 py-2">Average Weighted Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(chinaAveragedScores).map(([objective, score]) => (
+            <tr key={objective}>
+              <td className="border border-gray-300 px-4 py-2">{objective}</td>
+              <td className="border border-gray-300 px-4 py-2">{score.toFixed(3)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+/*----下記は編集してはダメ--------*/
+
 function MainComponent() {
   const [selectedChapter, setSelectedChapter] = React.useState("");
   const [showAllSections, setShowAllSections] = React.useState(true);
@@ -114,8 +180,7 @@ function MainComponent() {
     { id: "chapter5_1", name: "5.1 Results and Calculations For Taiwan" },
     { id: "chapter5_2", name: "5.2 Results and Calculations For China" },
     { id: "chapter6_1", name: "6.1 Cyber Power Index For Taiwan" },  
-  
-
+    { id: "chapter6_2", name: "6.2 Cyber Power Index For China" },  
   ];
 
 
@@ -2406,7 +2471,7 @@ function MainComponent() {
             )}
       
       {chapter.id === "chapter6_1" && <AggregationComponent />}
-
+      {chapter.id === "chapter6_2" && <ChinaAggregationComponent />} 
           </section>
         ))}
       </div>
@@ -2416,4 +2481,4 @@ function MainComponent() {
 
 export default MainComponent;
 
-            
+        
