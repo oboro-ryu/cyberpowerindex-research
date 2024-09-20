@@ -167,8 +167,10 @@ function MainComponent() {
     { id: "abstract", name: "Abstract" },
     { id: "chapter1", name: "1. Introduction" },
     { id: "chapter2", name: "2. Literature Review" },
-    { id: "chapter3", name: "3. Methodology" },
-    { id: "chapter4", name: "4. Analysis and Findings" },
+    { id: "chapter3_1", name: "3. Methodology" },
+    { id: "chapter3_2", name: "3.2 Adjusted NCPI Framework for the conflict over Taiwan" },
+    { id: "chapter3_3", name: "3.3 Advanced Weighting Methodology" },
+    { id: "chapter4_1", name: "4. Analysis and Findings" },
     { id: "chapter4_2_1", name: "4.2.1 Surveilling and Monitoring Domestic Groups" },
     { id: "chapter4_2_2", name: "4.2.2 Strengthening and Enhancing National Cyber Defense" },
     { id: "chapter4_2_3", name: "4.2.3 Controlling and Manipulating the Information Environment" },
@@ -314,8 +316,8 @@ function MainComponent() {
               </>
             )}
   
-            {chapter.id === "chapter2" && (
-        <>
+          {chapter.id === "chapter2" && (
+          <>
 
           <h4>2.1 Cybersecurity Challenges in Taiwan</h4>
           <p className="mb-4">
@@ -336,18 +338,25 @@ function MainComponent() {
           </p>
         </>
       )}
-      {chapter.id === "chapter3" && (
+      {chapter.id === "chapter3_1" && (
+
         <>
-          <h4>3.1 Incident-Based Evaluation</h4>
+      <h4> 3.1 Incident-Based Evaluation</h4>
           <p className="mb-4">
-            To evaluate the impact of each incident, we use two indices:
+            To accurately evaluate the impact of each incident, I use two indices:
           </p>
           <ul className="list-disc ml-8 mb-4">
-            <li><strong>Cyber Capability Index (CCI):</strong> This index quantifies the technical capability demonstrated during the cyber operation.</li>
-            <li><strong>Cyber Intent Index (CII):</strong> This index assesses the strategic intent and broader impact of the operation.</li>
+            <li><strong>Cyber Capability Index (CCI):</strong> This index quantifies the technical capability demonstrated during cyber operation, representing the effectiveness and sophistication of the attack.</li>
+            <li><strong>Cyber Intent Index (CII):</strong> This index measures the strategic intent behind the operation, assessing the broader purposes and potential impact on national security.</li>
           </ul>
           <p className="mb-4">
-            Both indices are scored on a scale from 0.1 to 1.0, with 1.0 representing the highest possible level of capability or intent. For each cyber incident, the final Weighted Score is calculated by multiplying the CCI and CII values. In cases where incidents are linked to multiple NCPI objectives, a weighting factor is applied to ensure the relevance of each objective is accounted for. The formula is as follows:
+            Both CCI and CII are scored on a scale of 0.1 to 1.0, with 1.0 representing the highest level of capability or intent. Each cyber incident’s overall impact is then calculated by multiplying by the CCI and CII scales:
+          </p>
+          <p className="mb-4">
+            However, not all incidents carry the same significance for a nation’s overall cyber strategy. Accounting for this, a weighting factor is introduced, which reflects how critical a particular objective is for a nation’s security and strategy. This make certain of that incidents affecting key objectives are given appropriate emphasis in the final analysis.
+          </p>
+          <p className="mb-4">
+            The formula is as foolows:
           </p>
           <p className="mb-4 text-center">
             Weighted Score = (CCI × CII) × Weight
@@ -355,13 +364,17 @@ function MainComponent() {
           <p className="mb-4">
             For example, if the CCI of a particular operation is 0.7, the CII is 0.8, and the weight for a specific objective is 70%, the final score would be: 0.7 × 0.8 × 0.7 = 0.392. The sum of these weighted scores across all incidents and objectives provides an aggregate view of a nation’s cyber resilience and capabilities.
           </p>
+          </>
+      )}
 
-          <h4>3.3 National Cyber Power Index Framework</h4>
+
+          {chapter.id === "chapter3_2" && (
+        <>
           <p className="mb-4">
-            In this study, the National Cyber Power Index (NCPI) framework is utilized to evaluate the cyber capabilities of Taiwan in comparison with other nations such as China, Japan, and the United States. While the NCPI provides a comprehensive method for assessing cyber power through the use of the Cyber Capability Index (CCI) and Cyber Intent Index (CII), this research introduces a modified approach by applying weighted scores to better reflect Taiwan's specific strategic priorities in the context of its national security.
+            In this study, the National Cyber Power Index (NCPI) framework is utilized to evaluate the cyber capabilities of Taiwan in comparison with other nations  and states such as China, Japan, and the United States. While the NCPI provides a comprehensive method for assessing cyber power through the use of the Cyber Capability Index (CCI) and Cyber Intent Index (CII), this research introduces a modified approach by applying weighted scores to better reflect Taiwan's specific strategic and security priorities in the context of its national security.
           </p>
 
-          <h4>3.3.1 NCPI Formula Overview</h4>
+          <h4>3.2.1 NCPI Formula Overview</h4>
           <p className="mb-4">
             The original NCPI formula is expressed as:
           </p>
@@ -381,56 +394,129 @@ function MainComponent() {
             <li>Defining International Cyber Norms</li>
             <li>Amassing Wealth and Extracting Cryptocurrency</li>
           </ul>
-
-          <h4>3.3.2 Introduction of Weighted Scores</h4>
           <p className="mb-4">
-            Given Taiwan’s geopolitical situation and its focus on specific strategic threats, particularly from neighboring China, this study proposes a weighted score approach. This approach emphasizes certain objectives over others, particularly those more relevant to Taiwan's national defense and economic stability.
+            In this framework, equal weight is assigned to each of the eight objectives, assuming that all objectives contribute equally to a nation’s overall cyber power. This equal weighting provides a balanced view of cyber capabilities but may not always capture the unique priorities or threats faced by individual nations.
+          </p>
+        
+
+          <h4>3.2.2 Introduction of Weighted Scores</h4>
+          <p className="mb-4">
+            In Taiwan’s case, not all objectives are equally critical. Taiwan faces heightened threats from Chinese cyber operations, particularly in areas like protecting critical infrastructure and countering foreign intelligence collection. Conversely, objectives such as amassing wealth through cyber activities may be less important.
+          </p>
+          <p className="mb-4">
+            To reflect this, a weighted score approach is introduced. This approach applies greater emphasis (higher weight) to objectives that are crucial for Taiwan's defense, while giving lower weight to less critical areas. The formula used is:
           </p>
           <p className="mb-4 text-center">
             Weighted Score = (CCI × CII) × Weight
           </p>
           <p className="mb-4">
-            Where:
-            <ul className="list-disc ml-8 mb-4">
-              <li><strong>CCI:</strong> Measures the technical capabilities of Taiwan in each cyber operation.</li>
-              <li><strong>CII:</strong> Measures the strategic importance or intent behind these operations.</li>
-              <li><strong>Weight:</strong> Reflects the relative importance of each objective in Taiwan’s national security context.</li>
-            </ul>
+          
             For example, in Taiwan's case, objectives such as Foreign Intelligence Collection for National Security and Strengthening and Enhancing National Cyber Defenses are given higher weights due to the nation's focus on defending against foreign cyber espionage and protecting critical infrastructure.
           </p>
+          <h4>3.2.3 Clarification of Weighted Score Methodology</h4>
+          <p className="mb-4">
+            It is essential to clarify the concept of weighting in this context. The
+            weights applied to each objective are not arbitrarily assigned based on
+            subjective judgment. Instead, they are determined by analyzing the
+            frequency and severity of incidents related to each objective.
+          </p>
+          <p className="mb-4">
+            For instance, if 30% of all significant incidents affect national cyber
+            defenses, this objective would be assigned a weight of 0.3. Similarly,
+            objectives that are less frequently targeted or carry lower strategic
+            importance would receive lower weights.
+          </p>
+          <p className="mb-4">The weighted score approach helps to:</p>
+          <ul className="list-disc ml-8 mb-4">
+            <li>
+              <strong>Reflect real-world threats:</strong> By assigning weights
+              based on data-driven insights, the model reflects the actual strategic
+              focus of Taiwan’s cyber strategy.
+            </li>
+            <li>
+              <strong>Prevent bias:</strong> Assigning weights based purely on
+              subjective importance can introduce bias. By using incident frequency,
+              the process remains grounded in empirical evidence.
+            </li>
+          </ul>
 
-          <h4>3.3.3 Justification for Weighted Approach</h4>
+          <h4>3.2.4 Impact of Weighted Scores on Results</h4>
           <p className="mb-4">
-            The introduction of weighted scores allows this study to prioritize the cyber objectives that matter most to Taiwan. While the original NCPI formula assumes that all objectives are equally important for national cyber power, this research recognizes that the relevance of each objective can vary significantly depending on the country in question.
-          </p>
-
-          <h4>3.3.4 Impact of Weighted Scores on Results</h4>
-          <p className="mb-4">
-            The weighted approach produces different results compared to the equal-weight NCPI calculation. When weighted scores are applied, Taiwan's ranking improves in areas like Cyber Defense and Foreign Intelligence Collection, reflecting its concentrated efforts in these domains.
-          </p>
-          <h4>3.3.5 Impact of Weighted Scores on Results</h4>
-          <p className="mb-4">
-            <strong>最後に作成</strong>
-          </p>
-
-          <h4>3.3.6 Validation and Implications</h4>
-          <p className="mb-4">
-            The use of weighted scores is validated by Taiwan's recent national cyber defense initiatives, which prioritize defending critical infrastructure and countering foreign espionage. This approach not only aligns with Taiwan’s national security strategy but also provides a framework that can be applied to other nations with similar geopolitical concerns. 
+            By applying weighted scores, the results shift to more accurately
+            reflect Taiwan’s national priorities. Under the traditional,
+            equal-weight NCPI formula, Taiwan may appear to underperform in areas
+            such as amassing wealth or controlling information—objectives that are
+            not critical to its security. However, when weights are applied, the
+            focus shifts to areas like cyber defense and foreign intelligence
+            collection, where Taiwan invests heavily.
           </p>
           <p className="mb-4">
-            The weighted score methodology enables more precise and meaningful comparisons between nations by accounting for the different strategic priorities that influence each nation's cyber power. By modifying the original NCPI framework to introduce weighted scores, this study offers a more focused and context-sensitive analysis of Taiwan's cybersecurity.
-          </p>
-          <p className="mb-4">
-            The weighted approach ensures that the areas most critical to Taiwan’s defense are emphasized, providing a clearer understanding of its capabilities and vulnerabilities. This adjustment also facilitates more accurate comparisons with other nations, such as China, the United States, and Japan, by reflecting the unique challenges that Taiwan faces in the cyber domain.
-          </p>
+            As a result, Taiwan’s overall ranking improves in these key areas,
+            providing a more realistic view of its cyber capabilities.
+          </p>                  
         </>
       )}
 
+          {chapter.id === "chapter3_3" && (
+        <>
+          <h4>3.3.1 Data-Driven Weighting: Avoiding Subjective Bias</h4>
+          <p className="mb-4">
+            To eliminate subjective bias in assigning weights, this study uses an
+            incident-driven weighting methodology. Instead of arbitrarily deciding
+            which objectives are more important, weights are assigned based on the
+            frequency and severity of incidents across each objective. This ensures
+            that the weighting accurately reflects the areas where Taiwan faces the
+            greatest cyber threats.
+          </p>
+
+          <h4>3.3.2 Weight Calculation Formula</h4>
+          <p className="mb-4">The weighting for each objective is calculated as follows:</p>
+          <p className="mb-4 text-center">
+            Weightₐ = Total Incident Count across All Objectives / Incident Count for
+            Objectiveₐ
+          </p>
+          <p className="mb-4">
+            This formula ensures that the weight for each objective is proportional
+            to the number of incidents targeting that objective. For example, if
+            foreign intelligence collection accounts for 25% of all incidents, its
+            weight would be 0.25.
+          </p>
+
+          <h4>3.3.3 Adjusting Weights for Strategic Importance</h4>
+          <p className="mb-4">
+            In certain cases, additional adjustments may be made to reflect
+            strategic importance. For instance, although the frequency of incidents
+            targeting defining international cyber norms may be low, its impact on
+            global policy and long-term security could warrant a higher weight. In
+            such cases, strategic adjustments can be made, but they must be
+            justified with clear evidence or expert consensus.
+          </p>
+
+          <h4>3.3.4 Comparative Analysis of Weighted vs. Unweighted Scores</h4>
+          <p className="mb-4">
+            Finally, by comparing the weighted and unweighted NCPI scores, this
+            study demonstrates the impact of focusing on specific objectives.
+            Taiwan’s weighted score provides a more accurate reflection of its
+            strategic strengths in areas like cyber defense and intelligence
+            collection, which are vital for its national security, while
+            deemphasizing less critical objectives.
+          </p>
+          <p className="mb-4">
+            By incorporating this advanced weighting approach, the analysis not only
+            remains grounded in data but also ensures that the results are aligned
+            with Taiwan's actual cyber strategy. This method could be applied to
+            other nations facing similar threats, ensuring a robust and flexible
+            framework for future cybersecurity analyses.
+          </p>
+              
+        </>
+      )}
+              
+
 
       
-      {chapter.id === "chapter4" && (
+      {chapter.id === "chapter4_1" && (
         <>
-          {/* <h3>4. Analysis and Findings</h3> */}
 
           <h4>4.1 Objective Identification</h4>
           <ol className="list-decimal ml-8 mb-4">
