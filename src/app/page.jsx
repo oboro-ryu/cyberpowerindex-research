@@ -420,12 +420,6 @@ function MainComponent() {
             subjective judgment. Instead, they are determined by analyzing the
             frequency and severity of incidents related to each objective.
           </p>
-          <p className="mb-4">
-            For instance, if 30% of all significant incidents affect national cyber
-            defenses, this objective would be assigned a weight of 0.3. Similarly,
-            objectives that are less frequently targeted or carry lower strategic
-            importance would receive lower weights.
-          </p>
           <p className="mb-4">The weighted score approach helps to:</p>
           <ul className="list-disc ml-8 mb-4">
             <li>
