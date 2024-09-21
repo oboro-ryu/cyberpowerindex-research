@@ -434,20 +434,7 @@ function MainComponent() {
             </li>
           </ul>
 
-          <h4>3.2.4 Impact of Weighted Scores on Results</h4>
-          <p className="mb-4">
-            By applying weighted scores, the results shift to more accurately
-            reflect Taiwan’s national priorities. Under the traditional,
-            equal-weight NCPI formula, Taiwan may appear to underperform in areas
-            such as amassing wealth or controlling information—objectives that are
-            not critical to its security. However, when weights are applied, the
-            focus shifts to areas like cyber defense and foreign intelligence
-            collection, where Taiwan invests heavily.
-          </p>
-          <p className="mb-4">
-            As a result, Taiwan’s overall ranking improves in these key areas,
-            providing a more realistic view of its cyber capabilities.
-          </p>                  
+            
         </>
       )}
 
