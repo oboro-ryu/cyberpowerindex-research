@@ -364,15 +364,18 @@ function MainComponent() {
           <p className="mb-4">
             For example, if the CCI of a particular operation is 0.7, the CII is 0.8, and the weight for a specific objective is 70%, the final score would be: 0.7 × 0.8 × 0.7 = 0.392. The sum of these weighted scores across all incidents and objectives provides an aggregate view of a nation’s cyber resilience and capabilities.
           </p>
+          <p className="mb-4">
+            The weighted score for each incident is summed across all incidents to provide a comprehensive view of a nation's cyber capabilities and resilience.
+          </p>
           </>
       )}
 
 
           {chapter.id === "chapter3_2" && (
         <>
-          <p className="mb-4">
+          {/* <p className="mb-4">
             In this study, the National Cyber Power Index (NCPI) framework is utilized to evaluate the cyber capabilities of Taiwan in comparison with other nations  and states such as China, Japan, and the United States. While the NCPI provides a comprehensive method for assessing cyber power through the use of the Cyber Capability Index (CCI) and Cyber Intent Index (CII), this research introduces a modified approach by applying weighted scores to better reflect Taiwan's specific strategic and security priorities in the context of its national security.
-          </p>
+          </p> */}
 
           <h4>3.2.1 NCPI Formula Overview</h4>
           <p className="mb-4">
