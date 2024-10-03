@@ -5,91 +5,171 @@ import React from "react";
 // Define the AggregationComponent separately
 function AggregationComponent() {
   const [objectiveData, setObjectiveData] = React.useState([
-    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.8, weight: 1.0 },
-    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.7, CII: 0.7, weight: 1.0 },
-    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.6, CII: 0.5, weight: 1.0 },
-    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.4, CII: 0.4, weight: 1.0 },
-    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.6, CII: 0.6, weight: 1.0 },
-    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.8, CII: 0.8, weight: 0.7 },
-    { objective: "Surveilling and Monitoring Domestic Groups", CCI: 0.7, CII: 0.7, weight: 0.3 },
-    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.7, weight: 0.6 },
-    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.6, CII: 0.6, weight: 0.4 },
-    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.8, weight: 0.7 },
-    { objective: "Amassing Wealth and/or Extracting Cryptocurrency", CCI: 0.5, CII: 0.6, weight: 0.3 },
-    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.4, CII: 0.6, weight: 0.6 },
-    { objective: "Surveilling and Monitoring Domestic Groups", CCI: 0.3, CII: 0.5, weight: 0.4 },
-    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.7, weight: 0.7 },
-    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.6, weight: 0.3 },
-    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.8, CII: 0.7, weight: 0.6 },
-    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.7, CII: 0.6, weight: 0.4 },
-    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.7, weight: 0.6 },
-    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.6, weight: 0.4 },
-    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.7, weight: 0.7 },
-    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.6, CII: 0.6, weight: 0.3 },
-    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.7, CII: 0.6, weight: 0.6 },
-    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.6, CII: 0.5, weight: 0.4 },
-    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.6, CII: 0.7, weight: 0.6 },
-    { objective: "Surveilling and Monitoring Domestic Groups", CCI: 0.5, CII: 0.6, weight: 0.4 },
-    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.7, CII: 0.6, weight: 0.5 },
-    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.6, CII: 0.7, weight: 0.5 },
-    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.7, weight: 0.7 },
-    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.6, weight: 0.3 },
-    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.7, CII: 0.7, weight: 0.7 },
-    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.6, CII: 0.6, weight: 0.3 },
-    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.8, weight: 0.7 },
-    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.6, weight: 0.3 },
-    { objective: "Surveilling and Monitoring Domestic Groups", CCI: 0.5, CII: 0.5, weight: 1.0 }
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.8, CII: 0.8, weight: 0.4 },
+    { objective: "Surveillance and Monitoring of Domestic Groups", CCI: 0.7, CII: 0.7, weight: 0.075 },
+    
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.7, weight: 0.4  },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.6, CII: 0.6, weight: 0.1 },
+
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.8, weight: 0.4 },
+    { objective: "Amassing Wealth and/or Extracting Cryptocurrency", CCI: 0.5, CII: 0.6, weight: 0.05 },
+
+    { objective: "Destroying or Disabling an Adversary’s Infrastructure and Capabilities", CCI: 0.7, CII: 0.7, weight: 0.175 },
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.8, CII: 0.8, weight: 0.4 },
+
+    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.4, CII: 0.6, weight: 0.075 },
+    { objective: "Surveillance and Monitoring of Domestic Groups", CCI: 0.3, CII: 0.5, weight: 0.075 },
+
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.7, weight: 0.4 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.6, CII: 0.6, weight: 0.1 },
+
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.8, CII: 0.8, weight: 0.4 },
+    { objective: "Surveillance and Monitoring of Domestic Groups", CCI: 0.7, CII: 0.7, weight: 0.075 },
+
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.8, weight: 0.4},
+    { objective: "Amassing Wealth and/or Extracting Cryptocurrency", CCI: 0.5, CII: 0.6, weight: 0.05 },
+
+    { objective: "Destroying or Disabling an Adversary’s Infrastructure and Capabilities", CCI: 0.7, CII: 0.7, weight: 0.175 },
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.8, CII: 0.8, weight: 0.4 },
+
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.8, CII: 0.7, weight: 0.4 },
+    { objective: "Destroying or Disabling an Adversary’s Infrastructure and Capabilities", CCI: 0.6, CII: 0.5, weight: 0.175 },
+
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.9, CII: 0.9, weight: 0.4 },
+
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.8, CII: 0.7, weight: 0.4 },
+
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.6, weight: 0.4 },
+
+    { objective: "Destroying or Disabling an Adversary’s Infrastructure and Capabilities", CCI: 0.7, CII: 0.8, weight: 0.175 },
+
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.5, CII: 0.6, weight: 0.4 },
+
+    { objective: "Destroying or Disabling an Adversary’s Infrastructure and Capabilities", CCI: 0.8, CII: 0.9, weight: 0.175 },
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.8, CII: 0.9, weight: 0.4 },
+
+    { objective: "Destroying or Disabling an Adversary’s Infrastructure and Capabilities", CCI: 0.7, CII: 0.7, weight: 0.175 },
+
+    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.6, CII: 0.7, weight: 0.075 },
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.7, CII: 0.8, weight: 0.4 },
+
+    { objective: "Destroying or Disabling an Adversary’s Infrastructure and Capabilities", CCI: 0.8, CII: 0.8, weight: 0.175 },
+    { objective: "Foreign Intelligence Collection for National Security", CCI: 0.8, CII: 0.9, weight: 0.4 },
+
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.6, CII: 0.7, weight: 0.125 },
+
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.7, weight: 0.125 },
+    { objective: "Controlling and Manipulating the Information Environment", CCI: 0.6, CII: 0.6, weight: 0.075 },
+
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.8, weight: 0.125 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.6, weight: 0.1 },
+
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.7, CII: 0.7, weight: 0.125 },
+
+    { objective: "Strengthening and Enhancing National Cyber Defenses", CCI: 0.8, CII: 0.7, weight: 0.125 },
+    { objective: "Growing National Cyber and Commercial Technology Competence", CCI: 0.7, CII: 0.6, weight: 0.1 }
   ]);
 
-  // Function to calculate average weighted scores for each objective
-  const calculateAverageWeightedScores = () => {
-    const groupedData = {};
-    const countData = {};
+//   
+// //Function to calculate average weighted scores for each objective
+//   const calculateAverageWeightedScores = () => {
+//     const groupedData = {};
+//     const countData = {};
 
-    objectiveData.forEach(({ objective, CCI, CII, weight }) => {
-      const weightedScore = CCI * CII * weight;
-      if (groupedData[objective]) {
-        groupedData[objective] += weightedScore;
-        countData[objective] += 1; // Count the number of times the objective appears
-      } else {
-        groupedData[objective] = weightedScore;
-        countData[objective] = 1;
-      }
-    });
+//     objectiveData.forEach(({ objective, CCI, CII, weight }) => {
+//       const weightedScore = CCI * CII * weight;
+//       if (groupedData[objective]) {
+//         groupedData[objective] += weightedScore;
+//         countData[objective] += 1; // Count the number of times the objective appears
+//       } else {
+//         groupedData[objective] = weightedScore;
+//         countData[objective] = 1;
+//       }
+//     });
 
-    // Calculate the average by dividing the summed score by the count
-    const averagedScores = {};
-    for (const objective in groupedData) {
-      averagedScores[objective] = groupedData[objective] / countData[objective];
+//     // Calculate the average by dividing the summed score by the count
+//     const averagedScores = {};
+//     for (const objective in groupedData) {
+//       averagedScores[objective] = groupedData[objective] / countData[objective];
+//     }
+
+//     return averagedScores;
+//   };
+
+//   const averagedScores = calculateAverageWeightedScores();
+
+//   return (
+//     <div>
+//       <h2>Average Weighted Scores by Objective</h2>
+//       <table className="w-full table-auto border-collapse border border-gray-300 mb-4">
+//         <thead>
+//           <tr className="bg-gray-100">
+//             <th className="border border-gray-300 px-4 py-2">Objective</th>
+//             <th className="border border-gray-300 px-4 py-2">Average Weighted Score</th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {Object.entries(averagedScores).map(([objective, score]) => (
+//             <tr key={objective}>
+//               <td className="border border-gray-300 px-4 py-2">{objective}</td>
+//               <td className="border border-gray-300 px-4 py-2">{score.toFixed(3)}</td>
+//             </tr>
+//           ))}
+//         </tbody>
+//       </table>
+//     </div>
+//   );
+// }
+// Function to calculate average weighted scores for each objective
+const calculateAverageWeightedScores = () => {
+  const groupedData = {};
+  const countData = {};
+
+  // Iterate through each objective data and calculate the weighted score
+  objectiveData.forEach(({ objective, CCI, CII, weight }) => {
+    const weightedScore = CCI * CII * weight; // Calculate weighted score
+    if (groupedData[objective]) {
+      groupedData[objective] += weightedScore; // Add to the existing sum for the objective
+      countData[objective] += 1; // Increment the count for the objective
+    } else {
+      groupedData[objective] = weightedScore; // Initialize sum for the objective
+      countData[objective] = 1; // Initialize count for the objective
     }
+  });
 
-    return averagedScores;
-  };
+  // Calculate the average by dividing the summed score by the count of occurrences
+  const averagedScores = {};
+  for (const objective in groupedData) {
+    averagedScores[objective] = groupedData[objective] / countData[objective];
+  }
 
-  const averagedScores = calculateAverageWeightedScores();
+  return averagedScores;
+};
 
-  return (
-    <div>
-      <h2>Average Weighted Scores by Objective</h2>
-      <table className="w-full table-auto border-collapse border border-gray-300 mb-4">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="border border-gray-300 px-4 py-2">Objective</th>
-            <th className="border border-gray-300 px-4 py-2">Average Weighted Score</th>
+const averagedScores = calculateAverageWeightedScores();
+
+return (
+  <div>
+    <h2>Average Weighted Scores by Objective</h2>
+    <table className="w-full table-auto border-collapse border border-gray-300 mb-4">
+      <thead>
+        <tr className="bg-gray-100">
+          <th className="border border-gray-300 px-4 py-2">Objective</th>
+          <th className="border border-gray-300 px-4 py-2">Average Weighted Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {Object.entries(averagedScores).map(([objective, score]) => (
+          <tr key={objective}>
+            <td className="border border-gray-300 px-4 py-2">{objective}</td>
+            <td className="border border-gray-300 px-4 py-2">{score.toFixed(3)}</td>
           </tr>
-        </thead>
-        <tbody>
-          {Object.entries(averagedScores).map(([objective, score]) => (
-            <tr key={objective}>
-              <td className="border border-gray-300 px-4 py-2">{objective}</td>
-              <td className="border border-gray-300 px-4 py-2">{score.toFixed(3)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+        }
 
 /*------*/
 
@@ -169,7 +249,7 @@ function MainComponent() {
     { id: "chapter2", name: "2. Literature Review" },
     { id: "chapter3_1", name: "3. Methodology" },
     { id: "chapter3_2", name: "3.2 Adjusted NCPI Framework for the conflict over Taiwan" },
-    { id: "chapter3_3", name: "3.3 Advanced Weighting Methodology" },
+    { id: "chapter3_3", name: "3.3 Data Collection Methodology" },
     { id: "chapter4_1", name: "4. Analysis and Findings" },
     { id: "chapter4_2_1", name: "4.2.1 Surveilling and Monitoring Domestic Groups" },
     { id: "chapter4_2_2", name: "4.2.2 Strengthening and Enhancing National Cyber Defense" },
@@ -179,8 +259,9 @@ function MainComponent() {
     { id: "chapter4_2_6", name: "4.2.6 Destroying or Disabling an Adversary’s Infrastructure"},
     { id: "chapter4_2_7", name: "4.2.7 Defining International Cyber Norms and Technical Standards" },
     { id: "chapter4_2_8", name: "4.2.8 Amassing Wealth and Extracting Cryptocurrency" },
-    { id: "chapter5_1", name: "5.1 Results and Calculations For Taiwan" },
-    { id: "chapter5_2", name: "5.2 Results and Calculations For China" },
+    { id: "chapter5_1", name: "5.1 Results and Calculations" },
+    { id: "chapter5_2", name: "5.2 The Hacker News for Taiwan" },
+    { id: "chapter5_3", name: "5.3 CSIS for Taiwan" },
     { id: "chapter6_1", name: "6.1 Cyber Power Index For Taiwan" },  
     { id: "chapter6_2", name: "6.2 Cyber Power Index For China" },  
   ];
@@ -198,6 +279,7 @@ function MainComponent() {
 
 
   return (
+
     <div className="container mx-auto p-4 font-sans">
       <nav className="p-4 bg-gray-800 text-white mb-4">
         <ul className="flex space-x-4">
@@ -356,7 +438,7 @@ function MainComponent() {
             However, not all incidents carry the same significance for a nation’s overall cyber strategy. Accounting for this, a weighting factor is introduced, which reflects how critical a particular objective is for a nation’s security and strategy. This make certain of that incidents affecting key objectives are given appropriate emphasis in the final analysis.
           </p>
           <p className="mb-4">
-            The formula is as foolows:
+            The formula is as follows:
           </p>
           <p className="mb-4 text-center">
             Weighted Score = (CCI × CII) × Weight
@@ -382,7 +464,7 @@ function MainComponent() {
             The original NCPI formula is expressed as:
           </p>
           <p className="mb-4 text-center">
-            <img src="./images/ncpi.png" alt="NCPI Formula" />
+            <img src="/src/app/images/ncpi.png" alt="NCPI Formula" />
           </p>    
           <p className="mb-4">
             This formula aggregates the product of capability and intent for each of the eight key objectives that define national cyber power:
@@ -441,67 +523,41 @@ function MainComponent() {
         </>
       )}
 
-          {chapter.id === "chapter3_3" && (
-        <>
-          <h4>3.3.1 Data-Driven Weighting: Avoiding Subjective Bias</h4>
-          <p className="mb-4">
-            To eliminate subjective bias in assigning weights, this study uses an
-            incident-driven weighting methodology. Instead of arbitrarily deciding
-            which objectives are more important, weights are assigned based on the
-            frequency and severity of incidents across each objective. This ensures
-            that the weighting accurately reflects the areas where Taiwan faces the
-            greatest cyber threats.
-          </p>
-
-          <h4>3.3.2 Weight Calculation Formula</h4>
-          <p className="mb-4">The weighting for each objective is calculated as follows:</p>
-          <p className="mb-4 text-center">
-            Weightₐ = Total Incident Count across All Objectives / Incident Count for
-            Objectiveₐ
-          </p>
-          <p className="mb-4">
-            This formula ensures that the weight for each objective is proportional
-            to the number of incidents targeting that objective. For example, if
-            foreign intelligence collection accounts for 25% of all incidents, its
-            weight would be 0.25.
-          </p>
-
-          <h4>3.3.3 Adjusting Weights for Strategic Importance</h4>
-          <p className="mb-4">
-            In certain cases, additional adjustments may be made to reflect
-            strategic importance. For instance, although the frequency of incidents
-            targeting defining international cyber norms may be low, its impact on
-            global policy and long-term security could warrant a higher weight. In
-            such cases, strategic adjustments can be made, but they must be
-            justified with clear evidence or expert consensus.
-          </p>
-
-          <h4>3.3.4 Comparative Analysis of Weighted vs. Unweighted Scores</h4>
-          <p className="mb-4">
-            Finally, by comparing the weighted and unweighted NCPI scores, this
-            study demonstrates the impact of focusing on specific objectives.
-            Taiwan’s weighted score provides a more accurate reflection of its
-            strategic strengths in areas like cyber defense and intelligence
-            collection, which are vital for its national security, while
-            deemphasizing less critical objectives.
-          </p>
-          <p className="mb-4">
-            By incorporating this advanced weighting approach, the analysis not only
-            remains grounded in data but also ensures that the results are aligned
-            with Taiwan's actual cyber strategy. This method could be applied to
-            other nations facing similar threats, ensuring a robust and flexible
-            framework for future cybersecurity analyses.
-          </p>
-              
-        </>
-      )}
-              
-
 
       
+      {chapter.id === "chapter3_3" && (
+        <>
+          <h4>3.4.1 Data Sources</h4>
+          <p className="mb-4">
+          The data for this study comes from three primary sources:
+          </p>
+          
+          <ul className="list-disc ml-8 mb-4">
+            <li>
+              <strong>112年度國家資通安全情勢報告:</strong> A comprehensive report on Taiwan’s cybersecurity incidents, published by Taiwan’s National Security Bureau. It documents key cyber events affecting Taiwan and provides in-depth insights into how the nation is defending against cyber threats.
+            </li>
+            <li>
+              <strong>CSIS Significant Cyber Incidents Database:</strong> A timeline of major cyber incidents globally, maintained by the Center for Strategic and International Studies (CSIS). It offers a valuable comparison of cyber events that impact Taiwan and other nations.
+            </li>
+            <li><strong>The Hacker News: </strong>This source provides real-time reporting on cyber incidents, with a particular focus on threats emerging from targeting country’s cyber operations. Reports from The Hacker News related to Chinese America Japan Taiwan incidents in 2024 are crucial for understanding the immediate cyber risks the targeting countries face from those countries.
+            </li>
+          </ul>
+          <h4>3.4.2 Data Collection Process</h4>
+          <p className="mb-4">
+          To ensure the data collected is accurate, comprehensive, and free from duplication, this study employs a hybrid data collection approach involving both manual and automated methods.
+          </p>
+          <ul>
+            <li>
+            <strong>Official Databases and Reports:</strong> Data from official organizations like Taiwan's National Security Bureau and international cybersecurity bodies (such as CISA and CSIS) provide reliable and verified data that serve as the foundation of the analysis.
+            </li>
+            <li>
+              <strong>Data Cleaning and De-duplication:</strong>A rigorous data cleaning process is applied, ensuring that multiple reports on the same incident are cross-referenced using unique identifiers like event timestamps, attack types, and affected entities. This helps to maintain data integrity and prevent duplication.
+            </li>
+          </ul>
+        </>
+      )}
       {chapter.id === "chapter4_1" && (
         <>
-
           <h4>4.1 Objective Identification</h4>
           <ol className="list-decimal ml-8 mb-4">
             <li>Surveillance and Monitoring of Domestic Groups</li>
@@ -513,16 +569,15 @@ function MainComponent() {
             <li>Defining International Cyber Norms and Technical Standards</li>
             <li>Amassing Wealth and/or Extracting Cryptocurrency</li>
           </ol>
-
+          </>
+      )}
+    {chapter.id === "chapter4_2_1" && (
+        <>
           <h4>4.2 Mapping to Operational Goals</h4>
           <p className="mb-4">
             Map collected operational data to each objective and assess their significance and impact on a scale from 0.1 to 1.0.
           {/* <h2 className="text-xl font-semibold mb-4">{chapter.name}</h2> */}
           </p>
-        </>
-      )}
-      {chapter.id === "chapter4_2_1" && (
-        <>
           <h3 className="text-lg font-medium mb-4">Scale and Description</h3>
           <table className="table-auto w-full text-left border-collapse mb-8">
             <thead>
@@ -1401,1163 +1456,633 @@ function MainComponent() {
                 {/* <h3>5 Results and Calculations</h3> */}
                 {chapter.id === "chapter5_1" && (
                 <>
+                <h4>5.1 Incident Analysis and Weighting For Taiwan</h4>
+                <p>The cyber incidents affecting Taiwan are evaluated and categorized according to the NCPI objectives. Each incident is assigned a weighted score based on the CCI and CII indices.</p>    
+                  <h3>5.1.1 Incident 1: Chinese Hackers Targeting Taiwanese Government Systems</h3>
+                  <p>Date: [Insert Date]</p>
 
-                <h3>5.1.1 Incident 1: APT Attacks Involving AI</h3>
-
-                <h4>Objective: Foreign Intelligence Collection for National Security</h4>
-                <p className="mb-4">
-                  Evaluation: Strategic collection of critical information from multiple sectors.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.7
-                  <br />
-                  Reasoning: Sustained and effective collection from critical sectors through AI-driven techniques.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.8
-                  <br />
-                  Reasoning: Highly coordinated and sustained intelligence collection efforts leveraging advanced AI tools.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Foreign Intelligence Collection for National Security:
-                    <br />
-                    CCI: 0.7, CII: 0.8
-                    <br />
-                    Weighted Score: 0.7 × 0.8 = 0.56
-                  </li>
-                </ul>
-
-                <h3>5.1.2 Incident 2: Critical Infrastructure Attacks</h3>
-
-                <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-                <p className="mb-4">
-                  Evaluation: Execution of an integrated national cyber defense strategy to defend critical infrastructure.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.7
-                  <br />
-                  Reasoning: National-level response and coordination to defend critical infrastructure.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.7
-                  <br />
-                  Reasoning: Strong intent to disrupt critical national infrastructure, forcing enhanced defenses.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Strengthening and Enhancing National Cyber Defenses:
-                    <br />
-                    CCI: 0.7, CII: 0.7
-                    <br />
-                    Weighted Score: 0.7 × 0.7 = 0.49
-                  </li>
-                </ul>
-
-
-                <h3>5.1.3 Incident 3: Threats to Cloud Services</h3>
-
-                <h4>Objective: Growing National Cyber and Commercial Technology Competence</h4>
-                <p className="mb-4">
-                  Evaluation: Applied technology development and sustained innovation targeting cloud services.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.6
-                  <br />
-                  Reasoning: Recognized domestic innovation and commercial technology development in cloud services.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.5
-                  <br />
-                  Reasoning: Moderate intent to exploit or develop cloud services for economic gain.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Growing National Cyber and Commercial Technology Competence:
-                    <br />
-                    CCI: 0.6, CII: 0.5
-                    <br />
-                    Weighted Score: 0.6 × 0.5 = 0.3
-                  </li>
-                </ul>
-
-
-
-                <h3>5.1.4 Incident 4: Social Engineering Attacks</h3>
-
-                <h4>Objective: Controlling and Manipulating the Information Environment</h4>
-                <p className="mb-4">
-                  Evaluation: Limited information operations targeting specific communities abroad.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.4
-                  <br />
-                  Reasoning: Basic operations aimed at specific communities.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.4
-                  <br />
-                  Reasoning: Moderate intent to manipulate information at a limited scale.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Controlling and Manipulating the Information Environment:
-                    <br />
-                    CCI: 0.4, CII: 0.4
-                    <br />
-                    Weighted Score: 0.4 × 0.4 = 0.16
-                  </li>
-                </ul>
-
-
-                <h3>5.1.5 Incident 5: Supplier Failure Leading to Security Incidents</h3>
-                <h4>Objective: Foreign Intelligence Collection for National Security</h4>
-                <p className="mb-4">
-                  Evaluation: Sustained collection of information from critical sectors through third-party vulnerabilities.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.6
-                  <br />
-                  Reasoning: Strategic access through third parties to collect critical intelligence represents moderate capability.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.6
-                  <br />
-                  Reasoning: Strong intent to gather intelligence through supply chain vulnerabilities makes this a moderately capable intelligence operation.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Foreign Intelligence Collection for National Security:
-                    <br />
-                    CCI: 0.6, CII: 0.6
-                    <br />
-                    Weighted Score: 0.6 × 0.6 = 0.36
-                  </li>
-                </ul>
-
-                <h3>5.1.6 Incident 6: Chinese Hackers Targeting Taiwanese Government Systems</h3>
-                <h4>Objective: Foreign Intelligence Collection for National Security</h4>
-                <p className="mb-4">
-                  Evaluation: Extensive and sustained intelligence collection activities by Chinese hackers.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.8
-                  <br />
-                  Reasoning: Extensive and advanced intelligence collection targeting critical government systems and sensitive accounts.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.8
-                  <br />
-                  Reasoning: Strong intent to gather strategic intelligence across multiple sectors.
-                </p>
-
-                <h4>Objective: Surveilling and Monitoring Domestic Groups</h4>
-                <p className="mb-4">
-                  Evaluation: Extensive surveillance activities targeting government officials.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.7
-                  <br />
-                  Reasoning: Broad-scale surveillance targeting government officials reflects strong capability.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.7
-                  <br />
-                  Reasoning: Strong intent to monitor individuals within the government.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Foreign Intelligence Collection for National Security:
-                    <br />
-                    Weight: 70%
-                    <br />
-                    CCI: 0.8, CII: 0.8
-                    <br />
-                    Weighted Score: 0.8 × 0.8 × 0.7 = 0.448
-                  </li>
-                  <li>
-                    Surveilling and Monitoring Domestic Groups:
-                    <br />
-                    Weight: 30%
-                    <br />
-                    CCI: 0.7, CII: 0.7
-                    <br />
-                    Weighted Score: 0.7 × 0.7 × 0.3 = 0.147
-                  </li>
-                </ul>
-                <h3>5.1.7 Incident 7: Espionage Campaign Against Taiwanese Semiconductor Vendors</h3>
-                <h4>Objective: Foreign Intelligence Collection for National Security</h4>
-                <p className="mb-4">
-                  Evaluation: Strategic collection of highly critical information, especially in the semiconductor industry.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.7
-                  <br />
-                  Reasoning: Strategic access to high-value technological information in critical sectors like semiconductors.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.7
-                  <br />
-                  Reasoning: Strong intent to gather critical intelligence on advanced technologies crucial to Taiwan's security.
-                </p>
-
-                <h4>Objective: Growing National Cyber and Commercial Technology Competence</h4>
-                <p className="mb-4">
-                  Evaluation: Recognized domestic innovation and commercial technology competence targeted for competitive advantage.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.6
-                  <br />
-                  Reasoning: Advanced research and development targeted, particularly in the semiconductor industry.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.6
-                  <br />
-                  Reasoning: Intent to compromise commercial technologies for competitive advantage reflects strong commercial targeting capability.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Foreign Intelligence Collection for National Security:
-                    <br />
-                    Weight: 60%
-                    <br />
-                    CCI: 0.7, CII: 0.7
-                    <br />
-                    Weighted Score: 0.7 × 0.7 × 0.6 = 0.294
-                  </li>
-                  <li>
-                    Growing National Cyber and Commercial Technology Competence:
-                    <br />
-                    Weight: 40%
-                    <br />
-                    CCI: 0.6, CII: 0.6
-                    <br />
-                    Weighted Score: 0.6 × 0.6 × 0.4 = 0.144
-                  </li>
-                </ul>
-
-                <h3>5.1.8 Incident 8: Taiwanese Lieutenant Selling Secret Military Documents to China for Cryptocurrency</h3>
-                <h4>Objective: Foreign Intelligence Collection for National Security</h4>
-                <p className="mb-4">
-                  Evaluation: This case involves the sale of highly classified military documents, including cyber warfare defense strategies, which represents a significant breach in Taiwan’s national security.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.7
-                  <br />
-                  Reasoning: The operation demonstrates considerable espionage capability. The ability to access, transfer, and conceal highly sensitive military documents without detection reflects advanced intelligence-gathering techniques.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.8
-                  <br />
-                  Reasoning: The intent was clear and highly strategic, aimed at obtaining Taiwan’s military intelligence. The use of cryptocurrency to avoid detection reflects a high level of intent to undermine Taiwan’s national security.
-                </p>
-
-                <h4>Objective: Amassing Wealth and/or Extracting Cryptocurrency</h4>
-                <p className="mb-4">
-                  Evaluation: The lieutenant received 8,000 units of Tether cryptocurrency as payment for the sale of military documents. This represents medium-scale financial damage through cryptocurrency transactions.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.5
-                  <br />
-                  Reasoning: The use of cryptocurrency for financial gain reflects moderate technical capability, though the primary objective was military espionage.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.6
-                  <br />
-                  Reasoning: The intent to use cryptocurrency for financial gain was clear, although it was secondary to the intelligence gathering.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Foreign Intelligence Collection for National Security:
-                    <br />
-                    Weight: 70%
-                    <br />
-                    CCI: 0.7, CII: 0.8
-                    <br />
-                    Weighted Score: 0.7 × 0.8 × 0.7 = 0.392
-                  </li>
-                  <li>
-                    Amassing Wealth and/or Extracting Cryptocurrency:
-                    <br />
-                    Weight: 30%
-                    <br />
-                    CCI: 0.5, CII: 0.6
-                    <br />
-                    Weighted Score: 0.5 × 0.6 × 0.3 = 0.09
-                  </li>
-                </ul>
-                <h3>5.1.10 Incident 10: China's Pressure on Foreign Lawmakers Ahead of the IPAC Forum in Taiwan</h3>
-                <h4>Objective: Controlling and Manipulating the Information Environment</h4>
-                <p className="mb-4">
-                  Evaluation: This diplomatic pressure campaign aimed at manipulating the political landscape surrounding Taiwan to prevent foreign lawmakers from attending the IPAC summit.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.4
-                  <br />
-                  Reasoning: The capability demonstrated here is diplomatic and non-technical, involving direct communication rather than cyber tools.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.6
-                  <br />
-                  Reasoning: China’s intent to suppress Taiwan’s international engagement is clear, reflecting a medium level of strategic intent.
-                </p>
-
-                <h4>Objective: Surveilling and Monitoring Domestic and International Groups</h4>
-                <p className="mb-4">
-                  Evaluation: The systematic targeting of lawmakers across multiple countries suggests China's attempt to monitor and influence international political groups that engage with Taiwan.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.3
-                  <br />
-                  Reasoning: While non-cyber in nature, this operation demonstrates China's ability to monitor international political movements and track Taiwan-related events.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.5
-                  <br />
-                  Reasoning: The intent to monitor and track political activities is moderate, aiming to prevent broader international support for Taiwan.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Controlling and Manipulating the Information Environment:
-                    <br />
-                    Weight: 60%
-                    <br />
-                    CCI: 0.4, CII: 0.6
-                    <br />
-                    Weighted Score: 0.4 × 0.6 × 0.6 = 0.144
-                  </li>
-                  <li>
-                    Surveilling and Monitoring Domestic and International Groups:
-                    <br />
-                    Weight: 40%
-                    <br />
-                    CCI: 0.3, CII: 0.5
-                    <br />
-                    Weighted Score: 0.3 × 0.5 × 0.4 = 0.06
-                  </li>
-                </ul>
-                <h3>5.1.11 Incident 11: Ministry of Digital Affairs (MODA) regarding the deployment of low earth orbit (LEO) satellite coverage</h3>
-                <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-                <p className="mb-4">
-                  Evaluation: The deployment of LEO satellites specifically addresses communication disruptions during disasters or conflicts, making it a key part of Taiwan's national defense strategy.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.8
-                  <br />
-                  Reasoning: The ability to provide continuous communication services, including in remote and disaster-prone areas, shows Taiwan's advanced national cyber defense capabilities.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.7
-                  <br />
-                  Reasoning: The deployment reflects a strategic effort to maintain communication resilience during times of crisis and ensure Taiwan’s military and political command centers remain functional.
-                </p>
-
-                <h4>Objective: Growing National Cyber and Commercial Technology Competence</h4>
-                <p className="mb-4">
-                  Evaluation: While the satellite system is not yet available to the public, MODA's plan to involve telecom companies indicates a future focus on commercial application and expanding Taiwan's technological leadership.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.7
-                  <br />
-                  Reasoning: The use of LEO satellites to provide high-speed internet (90 Mbps download, 14 Mbps upload) demonstrates Taiwan's growing technological competence, especially in telecommunications.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.6
-                  <br />
-                  Reasoning: The intent is to strengthen Taiwan's commercial technology sector, with a moderate strategic intent to compete in the global satellite market.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Strengthening and Enhancing National Cyber Defenses:
-                    <br />
-                    Weight: 70%
-                    <br />
-                    CCI: 0.8, CII: 0.7
-                    <br />
-                    Weighted Score: 0.8 × 0.7 × 0.7 = 0.392
-                  </li>
-                  <li>
-                    Growing National Cyber and Commercial Technology Competence:
-                    <br />
-                    Weight: 30%
-                    <br />
-                    CCI: 0.7, CII: 0.6
-                    <br />
-                    Weighted Score: 0.7 × 0.6 × 0.3 = 0.126
-                  </li>
-                </ul>
-
-                <h3>5.1.12 Incident 12: Establishment of a cybersecurity center as part of the Taiwan Digital Acceleration Plan 3.0</h3>
-                <h4>Objective: Growing National Cyber and Commercial Technology Competence</h4>
-                <p className="mb-4">
-                  Evaluation: The opening of a cybersecurity center by Cisco directly contributes to enhancing Taiwan’s cyber capabilities, including talent development and technological innovation.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.8
-                  <br />
-                  Reasoning: Cisco’s initiative enhances Taiwan's technological competence, particularly in AI applications in transportation and sustainability.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.7
-                  <br />
-                  Reasoning: Cisco's collaboration with the government and tech associations reflects a long-term commitment to improving Taiwan's cyber infrastructure and addressing global talent shortages.
-                </p>
-
-                <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-                <p className="mb-4">
-                  Evaluation: Cisco’s cybersecurity center will improve Taiwan’s ability to detect and mitigate cyber threats, increasing the nation’s overall cyber resilience.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.7
-                  <br />
-                  Reasoning: The establishment of a cybersecurity center will enhance Taiwan's threat intelligence and cyber readiness, providing the necessary infrastructure to defend against sophisticated attacks.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.6
-                  <br />
-                  Reasoning: The intent to fortify Taiwan’s cybersecurity and improve threat response times is clear, although the immediate defense capabilities are still being developed.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Growing National Cyber and Commercial Technology Competence:
-                    <br />
-                    Weight: 60%
-                    <br />
-                    CCI: 0.8, CII: 0.7
-                    <br />
-                    Weighted Score: 0.8 × 0.7 × 0.6 = 0.336
-                  </li>
-                  <li>
-                    Strengthening and Enhancing National Cyber Defenses:
-                    <br />
-                    Weight: 40%
-                    <br />
-                    CCI: 0.7, CII: 0.6
-                    <br />
-                    Weighted Score: 0.7 × 0.6 × 0.4 = 0.168
-                  </li>
-                </ul>
-
-                <h3>5.1.13 Incident 13: Tsai Ing-wen's speech at CyberSec 2024</h3>
-
-                <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-                <p className="mb-4">
-                  Evaluation: President Tsai highlighted Taiwan’s growing cyber capabilities through the creation of the Ministry of Digital Affairs (MODA) and emphasized increased cybersecurity investments, crucial for Taiwan’s strategic position in the global supply chain.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.8
-                  <br />
-                  Reasoning: The establishment of MODA and sustained growth in Taiwan's cybersecurity sector indicates a strong capability to enhance national cyber defenses and invest in proactive countermeasures.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.7
-                  <br />
-                  Reasoning: Taiwan’s strategic intent to protect national and international networks against cyber risks is clear, with a commitment to international cooperation.
-                </p>
-
-                <h4>Objective: Growing National Cyber and Commercial Technology Competence</h4>
-                <p className="mb-4">
-                  Evaluation: Taiwan’s CyberSec 2024 conference showcased advanced cybersecurity technologies, with AI and quantum computing as key innovation areas. Taiwan is positioning itself as a leader in next-gen cybersecurity solutions.
-                </p>
-                <p className="mb-4">
-                  CCI (Cyber Capability Index): 0.7
-                  <br />
-                  Reasoning: Taiwan's investment in cutting-edge technologies such as AI-based security and post-quantum cryptography reflects growing competence in the global cybersecurity market.
-                </p>
-                <p className="mb-4">
-                  CII (Cyber Intent Index): 0.6
-                  <br />
-                  Reasoning: Taiwan’s intent to stay ahead of future cyber threats through collaborations with industry and academia shows a long-term strategy for technological advancement.
-                </p>
-
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8 mb-4">
-                  <li>
-                    Strengthening and Enhancing National Cyber Defenses:
-                    <br />
-                    Weight: 60%
-                    <br />
-                    CCI: 0.8, CII: 0.7
-                    <br />
-                    Weighted Score: 0.8 × 0.7 × 0.6 = 0.336
-                  </li>
-                  <li>
-                    Growing National Cyber and Commercial Technology Competence:
-                    <br />
-                    Weight: 40%
-                    <br />
-                    CCI: 0.7, CII: 0.6
-                    <br />
-                    Weighted Score: 0.7 × 0.6 × 0.4 = 0.168
-                  </li>
-                </ul>
-                    <h3>5.1.14 Incident 14: Taiwan faces up to 5 million cyberattacks daily</h3>
-                    <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-                    <p className="mb-4">
-                      Evaluation: Given the scale and sophistication of cyberattacks, Taiwan has implemented more robust defenses, especially in response to election-related threats. The growing market for cybersecurity services reflects the nation's proactive stance in safeguarding its digital infrastructure.
-                    </p>
-                    <p className="mb-4">
-                      CCI (Cyber Capability Index): 0.8
-                      <br />
-                      Reasoning: Taiwan's ability to defend against millions of cyberattacks daily and its growing investment in cybersecurity demonstrates advanced capabilities. The government has responded with stringent legal penalties and advanced security measures, particularly in the e-commerce sector.
-                    </p>
-                    <p className="mb-4">
-                      CII (Cyber Intent Index): 0.7
-                      <br />
-                      Reasoning: The government’s intent to prevent attacks during critical moments such as elections and increase cybersecurity investments for public and private sectors shows strong intent.
-                    </p>
-
-                    <h4>Objective: Controlling and Manipulating the Information Environment</h4>
-                    <p className="mb-4">
-                      Evaluation: Misinformation and the spread of AI-generated content during elections are prominent concerns. Taiwan faces increasing numbers of deepfakes and IT bot attacks aimed at disrupting social and political stability.
-                    </p>
-                    <p className="mb-4">
-                      CCI (Cyber Capability Index): 0.6
-                      <br />
-                      Reasoning: While Taiwan has robust systems, deepfake technology and misinformation bots present ongoing challenges, requiring more advanced detection and response systems.
-                    </p>
-                    <p className="mb-4">
-                      CII (Cyber Intent Index): 0.6
-                      <br />
-                      Reasoning: The intent to manipulate the information environment through AI and bots is clear, requiring enhanced cybersecurity efforts.
-                    </p>
-
-                    <h4>Final Weighted Score Calculation</h4>
-                    <ul className="list-disc ml-8 mb-4">
-                      <li>
-                        Strengthening and Enhancing National Cyber Defenses:
-                        <br />
-                        Weight: 70%
-                        <br />
-                        CCI: 0.8, CII: 0.7
-                        <br />
-                        Weighted Score: 0.8 × 0.7 × 0.7 = 0.392
-                      </li>
-                      <li>
-                        Controlling and Manipulating the Information Environment:
-                        <br />
-                        Weight: 30%
-                        <br />
-                        CCI: 0.6, CII: 0.6
-                        <br />
-                        Weighted Score: 0.6 × 0.6 × 0.3 = 0.108
-                      </li>
-                    </ul>
-                    <h3>5.1.15 Incident 15: Taiwan's participation in the Tuvalu undersea cable project</h3>
-                    <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-                    <p className="mb-4">
-                      Evaluation: By joining the Tuvalu undersea cable project, Taiwan plays a crucial role in enhancing Tuvalu’s cyber infrastructure, ensuring it benefits from a secure and stable internet connection.
-                    </p>
-                    <p className="mb-4">
-                      CCI (Cyber Capability Index): 0.7
-                      <br />
-                      Reasoning: The collaboration with global partners like Google in deploying critical telecommunications infrastructure reflects Taiwan's growing capabilities in cyber defense.
-                    </p>
-                    <p className="mb-4">
-                      CII (Cyber Intent Index): 0.6
-                      <br />
-                      Reasoning: Taiwan’s intent to support its diplomatic allies underscores its strategic approach to strengthening regional cybersecurity.
-                    </p>
-
-                    <h4>Objective: Growing National Cyber and Commercial Technology Competence</h4>
-                    <p className="mb-4">
-                      Evaluation: Taiwan’s involvement in this project demonstrates its commitment to expanding technological reach beyond its borders and enhancing commercial technology competence.
-                    </p>
-                    <p className="mb-4">
-                      CCI (Cyber Capability Index): 0.6
-                      <br />
-                      Reasoning: Taiwan’s technological competence and its ability to contribute to global cyber and telecommunications initiatives are evident in its role in the project.
-                    </p>
-                    <p className="mb-4">
-                      CII (Cyber Intent Index): 0.5
-                      <br />
-                      Reasoning: While the primary focus is on cyber defense, Taiwan also aims to enhance secure communications infrastructure for its allies.
-                    </p>
-
-                    <h4>Final Weighted Score Calculation</h4>
-                    <ul className="list-disc ml-8 mb-4">
-                      <li>
-                        Strengthening and Enhancing National Cyber Defenses:
-                        <br />
-                        Weight: 60%
-                        <br />
-                        CCI: 0.7, CII: 0.6
-                        <br />
-                        Weighted Score: 0.7 × 0.6 × 0.6 = 0.252
-                      </li>
-                      <li>
-                        Growing National Cyber and Commercial Technology Competence:
-                        <br />
-                        Weight: 40%
-                        <br />
-                        CCI: 0.6, CII: 0.5
-                        <br />
-                        Weighted Score: 0.6 × 0.5 × 0.4 = 0.12
-                      </li>
-                    </ul>
-
-                    <h3>5.1.16 Incident 16: Taiwan has officially classified TikTok as a national security threat</h3>
-
-                    <h4>Objective: Controlling and Manipulating the Information Environment</h4>
-                    <p className="mb-4">
-                      Evaluation: Taiwan's classification of TikTok as a national security threat aligns with its strategy to mitigate foreign influence on its digital environment, particularly regarding political manipulation and data breaches.
-                    </p>
-                    <p className="mb-4">
-                      CCI (Cyber Capability Index): 0.6
-                      <br />
-                      Reasoning: TikTok’s ability to influence public discourse and collect sensitive data represents a moderate potential for manipulation in Taiwan’s digital and political environments.
-                    </p>
-                    <p className="mb-4">
-                      CII (Cyber Intent Index): 0.7
-                      <br />
-                      Reasoning: Taiwan’s decision reflects a strong intent to prevent foreign actors from controlling the information environment.
-                    </p>
-
-                    <h4>Objective: Surveilling and Monitoring Domestic Groups</h4>
-                    <p className="mb-4">
-                      Evaluation: TikTok’s potential to collect user data and share it with the Chinese government underlines concerns about surveillance on Taiwanese citizens.
-                    </p>
-                    <p className="mb-4">
-                      CCI (Cyber Capability Index): 0.5
-                      <br />
-                      Reasoning: TikTok’s data collection capabilities are significant, though the extent of its reach into sensitive data remains debated.
-                    </p>
-                    <p className="mb-4">
-                      CII (Cyber Intent Index): 0.6
-                      <br />
-                      Reasoning: Taiwan’s ban on TikTok in government agencies reflects a moderate intent to protect citizens and institutions from foreign surveillance.
-                    </p>
-
-                    <h4>Final Weighted Score Calculation</h4>
-                    <ul className="list-disc ml-8 mb-4">
-                      <li>
-                        Controlling and Manipulating the Information Environment:
-                        <br />
-                        Weight: 60%
-                        <br />
-                        CCI: 0.6, CII: 0.7
-                        <br />
-                        Weighted Score: 0.6 × 0.7 × 0.6 = 0.252
-                      </li>
-                      <li>
-                        Surveilling and Monitoring Domestic Groups:
-                        <br />
-                        Weight: 40%
-                        <br />
-                        CCI: 0.5, CII: 0.6
-                        <br />
-                        Weighted Score: 0.5 × 0.6 × 0.4 = 0.12
-                      </li>
-                    </ul>
-                  <h3>5.1.17 Incident 17: Taiwan Minister of Digital Affairs fields questions at legislature</h3>
-                  <h4>Objective: Controlling and Manipulating the Information Environment</h4>
-                  <p className="mb-4">
-                    Evaluation: Audrey Tang’s participation in the Summit for Democracy and defense of Taiwan's approach to combating disinformation through AI technology highlight Taiwan’s proactive stance on curbing the influence of false information. Her remarks emphasize Taiwan's commitment to promoting information transparency and the ethical use of AI to prevent the spread of deepfakes and AI-driven disinformation.
-                  </p>
-                  <p className="mb-4">
-                    CCI (Cyber Capability Index): 0.7
-                    <br />
-                    Reasoning: Taiwan’s experience in using AI to combat disinformation during elections demonstrates a significant technological capability, reinforced by international cooperation with organizations like the National Institute of Standards and Technology (NIST).
-                  </p>
-                  <p className="mb-4">
-                    CII (Cyber Intent Index): 0.6
-                    <br />
-                    Reasoning: Taiwan’s intent to counter disinformation through AI reflects a clear goal of ensuring election integrity and information security, though ongoing challenges from deepfake technology suggest room for improvement.
-                  </p>
-
-                  <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-                  <p className="mb-4">
-                    Evaluation: Tang’s response to internet fraud concerns highlights Taiwan’s commitment to strengthening its legal and technical infrastructure. The development of the Electronic Signature Act is a critical advancement in Taiwan's cybersecurity framework.
-                  </p>
-                  <p className="mb-4">
-                    CCI (Cyber Capability Index): 0.6
-                    <br />
-                    Reasoning: Taiwan's steady progression in cyber defense capabilities, as seen in its international cybersecurity partnerships and the Electronic Signature Act, reinforces its defensive posture, but there are still areas needing improvement.
-                  </p>
-                  <p className="mb-4">
-                    CII (Cyber Intent Index): 0.7
-                    <br />
-                    Reasoning: Taiwan’s active participation in enhancing its legal framework and aligning with international standards reflects a strong intent to protect its digital infrastructure.
-                  </p>
-
-                  <h4>Final Weighted Score Calculation</h4>
+                  <h4>Relevant Objective(s):</h4>
                   <ul className="list-disc ml-8 mb-4">
-                    <li>
-                      Controlling and Manipulating the Information Environment:
-                      <br />
-                      Weight: 50% (focus on managing disinformation and AI-driven content)
-                      <br />
-                      CCI: 0.7, CII: 0.6
-                      <br />
-                      Weighted Score: 0.7 × 0.6 × 0.5 = 0.21
-                    </li>
-                    <li>
-                      Strengthening and Enhancing National Cyber Defenses:
-                      <br />
-                      Weight: 50% (focus on preventing fraud and enhancing cyber defense)
-                      <br />
-                      CCI: 0.6, CII: 0.7
-                      <br />
-                      Weighted Score: 0.6 × 0.7 × 0.5 = 0.21
-                    </li>
+                    <li>Foreign Intelligence Collection for National Security</li>
+                    <li>Surveilling and Monitoring Domestic Groups</li>
                   </ul>
-                  <h3>5.1.18 Incident 18: Taiwan Digital Minister Stresses Global Cybersecurity Collaboration Importance</h3>
 
-                  <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-                  <p className="mb-4">
-                    Evaluation: Audrey Tang’s speech at the 2024 Swiss Cyber Security Days underscores Taiwan’s efforts to protect critical infrastructure and improve cyber response capabilities through international cooperation, including participation in NATO’s annual cyber conflict conference.
-                  </p>
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Foreign Intelligence Collection for National Security</h4>
                   <p className="mb-4">
                     CCI (Cyber Capability Index): 0.8
                     <br />
-                    Reasoning: Taiwan’s active engagement in global cybersecurity forums, including cross-border defense exercises and collaboration with democracies, highlights its advanced cybersecurity capabilities.
-                  </p>
-                  <p className="mb-4">
-                    CII (Cyber Intent Index): 0.7
-                    <br />
-                    Reasoning: Taiwan’s intent to bolster cybersecurity through global partnerships shows a clear focus on strengthening defenses against external threats.
-                  </p>
-
-                  <h4>Objective: Growing National Cyber and Commercial Technology Competence</h4>
-                  <p className="mb-4">
-                    Evaluation: Taiwan’s participation in international cybersecurity conferences, alongside companies like Acer and Trend Micro, shows its commitment to advancing cyber and commercial technology.
-                  </p>
-                  <p className="mb-4">
-                    CCI (Cyber Capability Index): 0.7
-                    <br />
-                    Reasoning: Taiwan’s showcase of its technological prowess, in partnership with key companies in global forums, underlines its growing capabilities in cyber defense and commercial cybersecurity technologies.
-                  </p>
-                  <p className="mb-4">
-                    CII (Cyber Intent Index): 0.6
-                    <br />
-                    Reasoning: Taiwan’s intent to expand its technological influence through participation in international events and collaborations is evident, though the primary focus remains on defense rather than commercial growth.
-                  </p>
-
-                  <h4>Final Weighted Score Calculation</h4>
-                  <ul className="list-disc ml-8 mb-4">
-                    <li>
-                      Strengthening and Enhancing National Cyber Defenses:
-                      <br />
-                      Weight: 70% (focus on critical infrastructure protection and cyber defense cooperation)
-                      <br />
-                      CCI: 0.8, CII: 0.7
-                      <br />
-                      Weighted Score: 0.8 × 0.7 × 0.7 = 0.392
-                    </li>
-                    <li>
-                      Growing National Cyber and Commercial Technology Competence:
-                      <br />
-                      Weight: 30% (focus on expanding technological capabilities in cyber technology)
-                      <br />
-                      CCI: 0.7, CII: 0.6
-                      <br />
-                      Weighted Score: 0.7 × 0.6 × 0.3 = 0.126
-                    </li>
-                  </ul>
-
-                  <h3>5.1.19 Incident 19: Cyberattacks rose 24 hours before Taiwan election</h3>
-                  <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-                  <p className="mb-4">
-                    Evaluation: The spike in cyberattacks targeting government offices and financial institutions 24 hours before Taiwan’s election demonstrates the need for robust cybersecurity measures to safeguard critical infrastructure and election integrity.
-                  </p>
-                  <p className="mb-4">
-                    CCI (Cyber Capability Index): 0.7
-                    <br />
-                    Reasoning: Taiwan’s ability to withstand a significant surge in attacks without major disruption, due to its coordination with cybersecurity firms like Trellix, highlights its mature cybersecurity infrastructure.
-                  </p>
-                  <p className="mb-4">
-                    CII (Cyber Intent Index): 0.7
-                    <br />
-                    Reasoning: The government’s intent to protect election integrity and prevent attacks targeting sensitive data indicates a strong commitment to national cyber defenses.
-                  </p>
-
-                  <h4>Objective: Controlling and Manipulating the Information Environment</h4>
-                  <p className="mb-4">
-                    Evaluation: The likely use of kompromat, or attempts to gather damaging information on political opponents, shows efforts to manipulate public perception before the election.
-                  </p>
-                  <p className="mb-4">
-                    CCI (Cyber Capability Index): 0.6
-                    <br />
-                    Reasoning: Taiwan’s defenses against misinformation campaigns are improving, though vulnerabilities in information protection, particularly in sensitive government records, remain.
-                  </p>
-                  <p className="mb-4">
-                    CII (Cyber Intent Index): 0.6
-                    <br />
-                    Reasoning: The persistent threat of cyberattacks aimed at gathering politically compromising information shows the need for stronger measures to counter disinformation.
-                  </p>
-
-                  <h4>Final Weighted Score Calculation</h4>
-                  <ul className="list-disc ml-8 mb-4">
-                    <li>
-                      Strengthening and Enhancing National Cyber Defenses:
-                      <br />
-                      Weight: 70% (focus on defending critical infrastructure and sensitive data)
-                      <br />
-                      CCI: 0.7, CII: 0.7
-                      <br />
-                      Weighted Score: 0.7 × 0.7 × 0.7 = 0.343
-                    </li>
-                    <li>
-                      Controlling and Manipulating the Information Environment:
-                      <br />
-                      Weight: 30% (focus on preventing information manipulation)
-                      <br />
-                      CCI: 0.6, CII: 0.6
-                      <br />
-                      Weighted Score: 0.6 × 0.6 × 0.3 = 0.108
-                    </li>
-                  </ul>
-                  <h3>5.1.20 Incident 20: Taiwan Building Drone Defenses for Power Plants to Deter Chinese Attacks</h3>
-
-                  <h4>Objective: Strengthening and Enhancing National Cyber and Physical Defenses</h4>
-                  <p className="mb-4">
-                    Evaluation: Taiwan’s decision to deploy drone jamming guns and other anti-drone devices at power plants and natural gas facilities shows its commitment to securing critical infrastructure from potential Chinese drone attacks. This effort highlights the integration of physical defenses with cybersecurity measures to safeguard critical infrastructure sectors.
-                  </p>
-                  <p className="mb-4">
-                    CCI (Cyber Capability Index): 0.8
-                    <br />
-                    Reasoning: The swift implementation of drone defenses and cybersecurity protocols by Taiwan’s CPC Corporation and Taipower reflects an advanced capability in protecting critical infrastructure. Taiwan's Ministry of Economic Affairs (MOEA) has also successfully thwarted over five million cyberattacks, demonstrating an effective response to both cyber and physical threats.
-                  </p>
-                  <p className="mb-4">
                     CII (Cyber Intent Index): 0.8
                     <br />
-                    Reasoning: The clear intent to safeguard energy, water, and electricity supply systems from Chinese threats is reflected in the deployment of drone jamming systems and preemptive countermeasures. Taiwan's proactive approach underscores a strong governmental focus on national security.
+                    Reasoning: The attack was highly coordinated, targeting critical government systems and sensitive personal accounts, demonstrating both high capability and intent.
                   </p>
 
-                  <h4>Objective: Growing National Cyber and Commercial Technology Competence</h4>
-                  <p className="mb-4">
-                    Evaluation: The deployment of advanced drone defense technologies by Taiwan reflects its commitment to expanding commercial technology related to national defense. The collaboration between the Ministry of Economic Affairs, CPC Corporation, and Taipower positions Taiwan as a leader in integrated defense solutions for critical infrastructure.
-                  </p>
+                  <h4>Objective 2: Surveilling and Monitoring Domestic Groups</h4>
                   <p className="mb-4">
                     CCI (Cyber Capability Index): 0.7
                     <br />
-                    Reasoning: Taiwan’s ability to incorporate drone countermeasures within civilian infrastructure demonstrates its potential to leverage commercial technological development for national defense purposes. This progress also signals Taiwan’s domestic innovation in research and development (R&D).
-                  </p>
-                  <p className="mb-4">
-                    CII (Cyber Intent Index): 0.6
+                    CII (Cyber Intent Index): 0.7
                     <br />
-                    Reasoning: Although the primary focus is on defense, Taiwan’s adoption of advanced drone jamming and cybersecurity techniques reflects an emerging intent to develop domestic commercial technology within the cybersecurity and defense sectors. However, the emphasis is primarily on defense rather than commercial growth.
+                    Reasoning: This attack demonstrates a high level of surveillance, particularly focusing on government officials, showing both strong capability and intent.
+                  </p>
+                  <h3>5.1.2 Incident 2: Espionage Campaign Against Taiwanese Semiconductor Vendors</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Foreign Intelligence Collection for National Security</li>
+                    <li>Growing National Cyber and Commercial Technology Competence</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: The espionage campaign targeted key economic sectors, particularly semiconductors, which are vital to Taiwan’s national security.
                   </p>
 
-                  <h4>Final Weighted Score Calculation</h4>
-                  <ul className="list-disc ml-8 mb-4">
-                    <li>
-                      Strengthening and Enhancing National Cyber and Physical Defenses:
-                      <br />
-                      Weight: 70% (focus on protecting critical infrastructure from both cyber and drone attacks)
-                      <br />
-                      CCI: 0.8, CII: 0.8
-                      <br />
-                      Weighted Score: 0.8 × 0.8 × 0.7 = 0.448
-                    </li>
-                    <li>
-                      Growing National Cyber and Commercial Technology Competence:
-                      <br />
-                      Weight: 30% (focus on integrating commercial technologies for defense purposes)
-                      <br />
-                      CCI: 0.7, CII: 0.6
-                      <br />
-                      Weighted Score: 0.7 × 0.6 × 0.3 = 0.126
-                    </li>
-                  </ul>
-                  <h3>5.1.21 Incident 21: Personal Data and Credential Breaches</h3>
-                  <h4>Objective: Surveilling and Monitoring Domestic Groups</h4>
+                  <h4>Objective 2: Growing National Cyber and Commercial Technology Competence</h4>
                   <p className="mb-4">
-                    Evaluation: Moderate comprehensive surveillance targeting personal data.
+                    CCI (Cyber Capability Index): 0.6
+                    <br />
+                    CII (Cyber Intent Index): 0.6
+                    <br />
+                    Reasoning: The attack targeted Taiwan’s leading commercial technologies, particularly in the semiconductor industry, reflecting both intent and capability to compromise Taiwan’s technological leadership.
                   </p>
+
+                  <h3>5.1.3 Incident 3: Taiwanese Lieutenant Selling Secret Military Documents to China for Cryptocurrency</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Foreign Intelligence Collection for National Security</li>
+                    <li>Amassing Wealth and/or Extracting Cryptocurrency</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.8
+                    <br />
+                    Reasoning: The operation demonstrates considerable espionage capability. The ability to access, transfer, and conceal highly sensitive military documents without immediate detection reflects advanced intelligence-gathering techniques.
+                  </p>
+
+                  <h4>Objective 2: Amassing Wealth and/or Extracting Cryptocurrency</h4>
                   <p className="mb-4">
                     CCI (Cyber Capability Index): 0.5
                     <br />
-                    Reasoning: Moderate comprehensive surveillance targeting specific sectors, aiming to gather personal data from various domestic groups.
-                  </p>
-                  <p className="mb-4">
-                    CII (Cyber Intent Index): 0.5
+                    CII (Cyber Intent Index): 0.6
                     <br />
-                    Reasoning: Moderate intent to monitor domestic groups through widespread data collection efforts.
+                    Reasoning: The ability to facilitate cryptocurrency transactions of this scale demonstrates a moderate level of technical capability. 
                   </p>
 
-                  <h4>Final Weighted Score Calculation</h4>
+                  <h3>5.1.4 Incident 4: Cyberattack on a Taiwan government-affiliated research institute</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
                   <ul className="list-disc ml-8 mb-4">
-                    <li>
-                      Surveilling and Monitoring Domestic Groups:
-                      <br />
-                      CCI: 0.5, CII: 0.5
-                      <br />
-                      Weighted Score: 0.5 × 0.5 = 0.25
-                    </li>
+                    <li>Destroying or Disabling an Adversary’s Infrastructure and Capabilities</li>
+                    <li>Foreign Intelligence Collection for National Security</li>
                   </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Destroying or Disabling an Adversary’s Infrastructure and Capabilities</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: The use of outdated software and customized tools by a well-known hacker group like APT41 demonstrates significant technical expertise.
+                  </p>
+
+                  <h4>Objective 2: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.8
+                    <br />
+                    Reasoning: APT41, being state-sponsored, has shown significant skill in infiltrating critical infrastructure.
+                  </p>
+
+                  <h3>5.1.5 Incident 5: Chinese Espionage Pressure on Foreign Lawmakers Ahead of the Inter-Parliamentary Alliance on China (IPAC) Forum</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Controlling and Manipulating the Information Environment</li>
+                    <li>Surveilling and Monitoring Domestic and International Groups</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Controlling and Manipulating the Information Environment</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.4
+                    <br />
+                    CII (Cyber Intent Index): 0.6
+                    <br />
+                    Reasoning: The operation involved direct communication with foreign lawmakers and does not rely heavily on cyber tools.
+                  </p>
+
+                  <h4>Objective 2: Surveilling and Monitoring Domestic and International Groups</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.3
+                    <br />
+                    CII (Cyber Intent Index): 0.5
+                    <br />
+                    Reasoning: The systematic targeting of lawmakers across multiple countries suggests an attempt by China to monitor and influence international political groups.
+                  </p>
+
+                  <h3>5.1.6 Incident 6: Espionage Campaign Against Taiwanese Semiconductor Vendors</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Foreign Intelligence Collection for National Security</li>
+                    <li>Growing National Cyber and Commercial Technology Competence</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: The espionage campaign strategically targeted Taiwan's semiconductor vendors, which are vital to Taiwan’s national security.
+                  </p>
+
+                  <h4>Objective 2: Growing National Cyber and Commercial Technology Competence</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.6
+                    <br />
+                    CII (Cyber Intent Index): 0.6
+                    <br />
+                    Reasoning: The attackers targeted advanced research and development efforts.
+                  </p>
+
+                  <h3>5.1.7 Incident 7: Chinese Hackers Targeting Taiwanese Government Systems</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Foreign Intelligence Collection for National Security</li>
+                    <li>Surveilling and Monitoring Domestic Groups</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.8
+                    <br />
+                    Reasoning: The attack demonstrated high coordination and targeting of critical government systems and sensitive personal accounts.
+                  </p>
+
+                  <h4>Objective 2: Surveilling and Monitoring Domestic Groups</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: The attackers focused on government officials and their networks, indicating a strong intent to monitor key individuals.
+                  </p>
+
+                  <h3>5.1.8 Incident 8: Taiwanese Lieutenant Selling Secret Military Documents to China for Cryptocurrency</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Foreign Intelligence Collection for National Security</li>
+                    <li>Amassing Wealth and/or Extracting Cryptocurrency</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.8
+                    <br />
+                    Reasoning: The sale of highly sensitive military documents demonstrated advanced intelligence-gathering techniques.
+                  </p>
+
+                  <h4>Objective 2: Amassing Wealth and/or Extracting Cryptocurrency</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.5
+                    <br />
+                    CII (Cyber Intent Index): 0.6
+                    <br />
+                    Reasoning: The use of cryptocurrency to avoid detection reflected a moderate technical capability.
+                  </p>
+
+                  <h3>5.1.9 Incident 9: Cyberattack on a Taiwan Government-Affiliated Research Institute</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Destroying or Disabling an Adversary’s Infrastructure and Capabilities</li>
+                    <li>Foreign Intelligence Collection for National Security</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Destroying or Disabling an Adversary’s Infrastructure and Capabilities</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: The sophisticated attack targeted critical infrastructure of a government-affiliated institute and disrupted research activities.
+                  </p>
+
+                  <h4>Objective 2: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.8
+                    <br />
+                    Reasoning: The attack demonstrated a high level of skill in infiltrating critical government-related infrastructure.
+                  </p>
+
+                  <h3>5.1.10 Incident 10: Chinese Hackers Exploit GeoServer Flaw to Target APAC Nations with EAGLEDOOR Malware</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Foreign Intelligence Collection for National Security</li>
+                    <li>Destroying or Disabling an Adversary’s Infrastructure and Capabilities</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: The use of spear-phishing and exploitation of GeoServer flaws showed a coordinated and sophisticated intelligence collection campaign.
+                  </p>
+
+                  <h4>Objective 2: Destroying or Disabling an Adversary’s Infrastructure and Capabilities</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.6
+                    <br />
+                    CII (Cyber Intent Index): 0.5
+                    <br />
+                    Reasoning: The malware’s ability to disrupt critical infrastructure posed a moderate threat to system stability.
+                  </p>
+
+                  <h3>5.1.11 Incident 11: Chinese Engineer Charged in U.S. for Years-Long Cyber Espionage Targeting NASA and Military</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Foreign Intelligence Collection for National Security</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 1</h4>
+
+                  <h4>Objective 1: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.9
+                    <br />
+                    CII (Cyber Intent Index): 0.9
+                    <br />
+                    Reasoning: The extended spear-phishing campaign targeting U.S. military, NASA, and aerospace organizations revealed a highly organized and strategic intent to collect sensitive and proprietary data.
+                  </p>
+
+                  <h3>5.1.12 Incident 12: Chinese Hackers Exploit Visual Studio Code in Southeast Asian Cyberattacks</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Foreign Intelligence Collection for National Security</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 1</h4>
+
+                  <h4>Objective 1: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: The use of Visual Studio Code’s reverse shell feature for espionage operations in Southeast Asia demonstrated a high level of technical capability.
+                  </p>
+
+                  <h3>5.1.13 Incident 13: Chinese-Speaking Hacker Group Targets Human Rights Studies in Middle East</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Foreign Intelligence Collection for National Security</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 1</h4>
+
+                  <h4>Objective 1: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.6
+                    <br />
+                    Reasoning: The targeting of Middle Eastern government entities focused on human rights studies demonstrated a moderate level of technical sophistication.
+                  </p>
+
+                  <h3>5.1.14 Incident 14: New Cyberattack Targets Chinese-Speaking Businesses with Cobalt Strike Payloads</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Destroying or Disabling an Adversary’s Infrastructure and Capabilities</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 1</h4>
+
+                  <h4>Objective 1: Destroying or Disabling an Adversary’s Infrastructure and Capabilities</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.8
+                    <br />
+                    Reasoning: The use of lateral movement, persistence, and deployment of Cobalt Strike to infiltrate and control compromised systems demonstrated a high level of technical sophistication.
+                  </p>
+
+                  <h3>5.1.15 Incident 15: macOS Version of HZ RAT Backdoor Targets Chinese Messaging App Users</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Foreign Intelligence Collection for National Security</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 1</h4>
+
+                  <h4>Objective 1: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.5
+                    <br />
+                    CII (Cyber Intent Index): 0.6
+                    <br />
+                    Reasoning: The use of HZ RAT to collect credentials and conduct system reconnaissance targeting users of Chinese messaging apps demonstrated moderate technical capability.
+                  </p>
+
+                  <h3>5.1.16 Incident 16: Chinese Volt Typhoon Exploits Versa Director Flaw, Targets U.S. and Global IT Sectors</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Destroying or Disabling an Adversary’s Infrastructure and Capabilities</li>
+                    <li>Foreign Intelligence Collection for National Security</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Destroying or Disabling an Adversary’s Infrastructure and Capabilities</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.9
+                    <br />
+                    Reasoning: Volt Typhoon exploited a zero-day vulnerability in Versa Director, allowing them to infiltrate critical IT infrastructure.
+                  </p>
+
+                  <h4>Objective 2: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.9
+                    <br />
+                    Reasoning: The operation targeted sensitive credentials from high-value sectors in IT and ISP industries, demonstrating an advanced effort to collect intelligence.
+                  </p>
+
+                  <h3>5.1.17 Incident 17: Chinese Hackers Exploit Zero-Day Cisco Switch Flaw to Gain System Control</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Destroying or Disabling an Adversary’s Infrastructure and Capabilities</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 1</h4>
+
+                  <h4>Objective 1: Destroying or Disabling an Adversary’s Infrastructure and Capabilities</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: Velvet Ant’s exploitation of the Cisco switch vulnerability to maintain persistence and gain control over compromised systems demonstrated significant technical capability.
+                  </p>
+
+                  <h3>5.1.18 Incident 18: China-Backed Earth Baku Expands Cyber Attacks to Europe, Middle East, and Africa</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Controlling and Manipulating the Information Environment</li>
+                    <li>Foreign Intelligence Collection for National Security</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Controlling and Manipulating the Information Environment</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.6
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: Earth Baku’s expansion into new regions indicated an increased focus on manipulating information environments, with public-facing applications used to deploy backdoor malware.
+                  </p>
+
+                  <h4>Objective 2: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.8
+                    <br />
+                    Reasoning: The campaign aimed at gathering intelligence from critical sectors, including government and media organizations.
+                  </p>
+
+                  <h3>5.1.19 Incident 19: China-Linked Hackers Compromise ISP to Deploy Malicious Software Updates</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Destroying or Disabling an Adversary’s Infrastructure and Capabilities</li>
+                    <li>Foreign Intelligence Collection for National Security</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Destroying or Disabling an Adversary’s Infrastructure and Capabilities</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.8
+                    <br />
+                    Reasoning: The compromise of an ISP to deliver malicious software updates demonstrated significant technical capability, enabling widespread malware distribution.
+                  </p>
+
+                  <h4>Objective 2: Foreign Intelligence Collection for National Security</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.9
+                    <br />
+                    Reasoning: The attackers aimed to exfiltrate sensitive data through poisoned DNS requests.
+                  </p>
+
+                  <h3>5.1.20 Incident 20: U.S. Proposes Ban on Connected Vehicles Using Chinese and Russian Tech</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Strengthening and Enhancing National Cyber Defenses</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 1</h4>
+
+                  <h4>Objective 1: Strengthening and Enhancing National Cyber Defenses</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.6
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: The U.S. proposal to ban connected vehicles using Chinese and Russian technology reflects a defensive strategy to reduce foreign risks in critical sectors.
+                  </p>
+
+                  <h3>5.1.21 Incident 21: Taiwan Faces 5 Million Cyberattacks Daily</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Strengthening and Enhancing National Cyber Defenses</li>
+                    <li>Controlling and Manipulating the Information Environment</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Strengthening and Enhancing National Cyber Defenses</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: Taiwan’s capability to defend against millions of cyberattacks daily demonstrates a robust and advanced cyber defense mechanism.
+                  </p>
+
+                  <h4>Objective 2: Controlling and Manipulating the Information Environment</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.6
+                    <br />
+                    CII (Cyber Intent Index): 0.6
+                    <br />
+                    Reasoning: Taiwan faces ongoing challenges with misinformation and AI-generated deepfakes during elections.
+                  </p>
+
+                  <h3>5.1.22 Incident 22: Taiwan Building Drone Defenses for Power Plants to Deter Chinese Attacks</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Strengthening and Enhancing National Cyber and Physical Defenses</li>
+                    <li>Growing National Cyber and Commercial Technology Competence</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Strengthening and Enhancing National Cyber and Physical Defenses</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.8
+                    <br />
+                    Reasoning: Taiwan’s deployment of drone jamming devices and anti-drone systems at critical infrastructure sites demonstrates a high level of capability in defending against physical threats.
+                  </p>
+
+                  <h4>Objective 2: Growing National Cyber and Commercial Technology Competence</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.6
+                    <br />
+                    Reasoning: The integration of advanced drone defense technology reflects Taiwan’s growing competence in leveraging commercial technology for national defense.
+                  </p>
+
+                  <h3>5.1.23 Incident 23: Taiwan Ministry of Digital Affairs Announces New Initiatives for Cyber Resilience</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Strengthening and Enhancing National Cyber Defenses</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 1</h4>
+
+                  <h4>Objective 1: Strengthening and Enhancing National Cyber Defenses</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: The Ministry of Digital Affairs announced new initiatives focusing on increasing Taiwan’s cyber resilience.
+                  </p>
+
+                  <h3>5.1.24 Incident 24: Taiwan Deploys Satellite Communication Systems to Strengthen Cyber Defenses</h3>
+                  <p>Date: [Insert Date]</p>
+
+                  <h4>Relevant Objective(s):</h4>
+                  <ul className="list-disc ml-8 mb-4">
+                    <li>Strengthening and Enhancing National Cyber Defenses</li>
+                    <li>Growing National Cyber and Commercial Technology Competence</li>
+                  </ul>
+
+                  <h4>Number of Objectives: 2</h4>
+
+                  <h4>Objective 1: Strengthening and Enhancing National Cyber Defenses</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.8
+                    <br />
+                    CII (Cyber Intent Index): 0.7
+                    <br />
+                    Reasoning: The deployment of satellite communication systems addresses the issue of communication disruptions during conflicts and disasters.
+                  </p>
+
+                  <h4>Objective 2: Growing National Cyber and Commercial Technology Competence</h4>
+                  <p className="mb-4">
+                    CCI (Cyber Capability Index): 0.7
+                    <br />
+                    CII (Cyber Intent Index): 0.6
+                    <br />
+                    Reasoning: Taiwan’s effort to integrate satellite communication into commercial use reflects the country’s growing technological leadership.
+                  </p>       
                   </>
               )}
 
               {chapter.id === "chapter5_2" && (
               <>
-                <h2>5.2 Incident Analysis and Weighting For China</h2>
-                <p>The cyber incidents affecting China are evaluated and categorized according to the NCPI objectives. Each incident is assigned a weighted score based on the CCI and CII indices.</p>
-
-                {/* 5.2.1 Incident 1 */}
-                <h3>5.2.1 Incident 1: Data Security Risk Assessment by MIIT</h3>
-                <p>Date: October 9, 2023</p>
-                <h4>Objective 1: Strengthening and Enhancing National Cyber Defenses</h4>
-                <ul className="list-disc ml-8">
-                  <li>CCI (Cyber Capability Index): 0.7</li>
-                  <li>Reasoning: The "Implementing Rules for Data Security Risk Assessment" require annual assessments for critical data handlers, showing a solidified approach to systematizing cyber defenses across industries.</li>
-                </ul>
-                <ul className="list-disc ml-8">
-                  <li>CII (Cyber Intent Index): 0.6</li>
-                  <li>Reasoning: The mandatory assessments for important or core data reflect an intent to protect critical information, but the scope is limited to certain sectors.</li>
-                </ul>
-                <h4>Objective 2: Surveilling and Monitoring Domestic Groups</h4>
-                <ul className="list-disc ml-8">
-                  <li>CCI (Cyber Capability Index): 0.5</li>
-                  <li>Reasoning: The annual reporting requirements suggest oversight mechanisms that enable government monitoring of companies handling critical data.</li>
-                </ul>
-                <ul className="list-disc ml-8">
-                  <li>CII (Cyber Intent Index): 0.5</li>
-                  <li>Reasoning: Intent to monitor data handlers for compliance is evident, but it does not extend to broader surveillance practices.</li>
-                </ul>
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8">
-                  <li>
-                    Strengthening and Enhancing National Cyber Defenses
-                    <br />
-                    CCI: 0.7, CII: 0.6
-                    <br />
-                    Weighted Score: 0.7 × 0.6 × 0.7 = 0.294
-                  </li>
-                  <li>
-                    Surveilling and Monitoring Domestic Groups
-                    <br />
-                    CCI: 0.5, CII: 0.5
-                    <br />
-                    Weighted Score: 0.5 × 0.5 × 0.3 = 0.075
-                  </li>
-                </ul>
-
-                {/* 5.2.2 Incident 2 */}
-                <h3>5.2.2 Incident 2: Automotive Industry Sectoral Developments</h3>
-                <p>Date: July 26, 2023</p>
-                <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-                <ul className="list-disc ml-8">
-                  <li>CCI (Cyber Capability Index): 0.6</li>
-                  <li>Reasoning: The introduction of strict data security standards for intelligent connected vehicles indicates a moderate capability in managing cybersecurity risks in the evolving automotive sector, especially in autonomous driving.</li>
-                </ul>
-                <ul className="list-disc ml-8">
-                  <li>CII (Cyber Intent Index): 0.7</li>
-                  <li>Reasoning: The strong focus on safeguarding connected vehicle technologies demonstrates the government's clear intent to protect critical sectors linked to national security.</li>
-                </ul>
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8">
-                  <li>
-                    Strengthening and Enhancing National Cyber Defenses
-                    <br />
-                    CCI: 0.6, CII: 0.7
-                    <br />
-                    Weighted Score: 0.6 × 0.7 × 1 = 0.42
-                  </li>
-                </ul>
-
-                {/* 5.2.3 Incident 3 */}
-                <h3>5.2.3 Incident 3: Financial Industry Sectoral Developments</h3>
-                <p>Date: July 24, 2023</p>
-                <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-                <ul className="list-disc ml-8">
-                  <li>CCI (Cyber Capability Index): 0.7</li>
-                  <li>Reasoning: The "Measures for Management of Data Security in the Business Areas of the PBOC" emphasize a high level of data security protocols, especially in finance, which is a critical sector for national security.</li>
-                </ul>
-                <ul className="list-disc ml-8">
-                  <li>CII (Cyber Intent Index): 0.6</li>
-                  <li>Reasoning: Intent to fortify cybersecurity in financial institutions is strong, highlighting the government's concern with protecting financial data.</li>
-                </ul>
-                <h4>Final Weighted Score Calculation</h4>
-                <ul className="list-disc ml-8">
-                  <li>
-                    Strengthening and Enhancing National Cyber Defenses
-                    <br />
-                    CCI: 0.7, CII: 0.6
-                    <br />
-                    Weighted Score: 0.7 × 0.6 × 1 = 0.42
-                  </li>
-                </ul>
-                <h3>5.2.4 Incident 4: Healthcare Sector Developments</h3>
-              <p>Date: August 24, 2023</p>
-              <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-              <ul className="list-disc ml-8">
-                <li>CCI (Cyber Capability Index): 0.6</li>
-                <li>Reasoning: The adoption of new health data standards strengthens the defense of sensitive health data, ensuring enhanced security capabilities.</li>
-              </ul>
-              <ul className="list-disc ml-8">
-                <li>CII (Cyber Intent Index): 0.6</li>
-                <li>Reasoning: The government's intent to safeguard health data is clear, as seen in the development of strict health data processing standards.</li>
-              </ul>
-              <h4>Final Weighted Score Calculation</h4>
-              <ul className="list-disc ml-8">
-                <li>
-                  Strengthening and Enhancing National Cyber Defenses
-                  <br />
-                  CCI: 0.6, CII: 0.6
-                  <br />
-                  Weighted Score: 0.6 × 0.6 × 1 = 0.36
-                </li>
-              </ul>
-
-              {/* 5.2.5 Incident 5 */}
-              <h3>5.2.5 Incident 5: Revisions to the Cyber Security Law (CSL)</h3>
-              <p>Date: September 7, 2023</p>
-              <h4>Objective: Defining International Cyber Norms and Technical Standards</h4>
-              <ul className="list-disc ml-8">
-                <li>CCI (Cyber Capability Index): 0.7</li>
-                <li>Reasoning: The revisions to the CSL demonstrate China's efforts to position itself as a leader in shaping international cybersecurity standards.</li>
-              </ul>
-              <ul className="list-disc ml-8">
-                <li>CII (Cyber Intent Index): 0.7</li>
-                <li>Reasoning: The intent to take a leadership role in establishing global cyber norms is strong, as shown by the proposed changes to the law.</li>
-              </ul>
-              <h4>Final Weighted Score Calculation</h4>
-              <ul className="list-disc ml-8">
-                <li>
-                  Defining International Cyber Norms and Technical Standards
-                  <br />
-                  CCI: 0.7, CII: 0.7
-                  <br />
-                  Weighted Score: 0.7 × 0.7 × 1 = 0.49
-                </li>
-              </ul>
-
-              {/* 5.2.6 Incident 6 */}
-              <h3>5.2.6 Incident 6: Swift Cybersecurity Reporting Mandate</h3>
-              <p>Date: December 8, 2023</p>
-              <h4>Objective: Strengthening and Enhancing National Cyber Defenses</h4>
-              <ul className="list-disc ml-8">
-                <li>CCI (Cyber Capability Index): 0.7</li>
-                <li>Reasoning: The introduction of the mandatory reporting system increases the nation's real-time response to cyber threats, representing an advanced capability to manage security incidents.</li>
-              </ul>
-              <ul className="list-disc ml-8">
-                <li>CII (Cyber Intent Index): 0.8</li>
-                <li>Reasoning: The intent to enforce swift responses to cyber incidents is clear and shows a proactive stance in mitigating cyber threats.</li>
-              </ul>
-              <h4>Final Weighted Score Calculation</h4>
-              <ul className="list-disc ml-8">
-                <li>
-                  Strengthening and Enhancing National Cyber Defenses
-                  <br />
-                  CCI: 0.7, CII: 0.8
-                  <br />
-                  Weighted Score: 0.7 × 0.8 × 1 = 0.56
-                </li>
-              </ul>
-              {/* 5.2.7 Incident 7 */}
-              <h3>5.2.7 Incident 7: Cybersecurity Review of a Global Semiconductor Supplier</h3>
-              <p>Date: September 1, 2023</p>
-              <h4>Objective: Destroying or Disabling an Adversary’s Infrastructure and Capabilities</h4>
-              <ul className="list-disc ml-8">
-                <li>CCI (Cyber Capability Index): 0.8</li>
-                <li>Reasoning: The cybersecurity review of a foreign supplier shows China's advanced capability to detect and mitigate risks to its critical infrastructure.</li>
-              </ul>
-              <ul className="list-disc ml-8">
-                <li>CII (Cyber Intent Index): 0.7</li>
-                <li>Reasoning: Strong intent to protect the national infrastructure from foreign threats is evident in the comprehensive review and actions taken.</li>
-              </ul>
-              <h4>Final Weighted Score Calculation</h4>
-              <ul className="list-disc ml-8">
-                <li>
-                  Destroying or Disabling an Adversary’s Infrastructure and Capabilities
-                  <br />
-                  CCI: 0.8, CII: 0.7
-                  <br />
-                  Weighted Score: 0.8 × 0.7 × 1 = 0.56
-                </li>
-              </ul>
-
-              {/* 5.2.8 Incident 8 */}
-              <h3>5.2.8 Incident 8: Data Breach at a Knowledge Service Platform</h3>
-              <p>Date: September 1, 2023</p>
-              <h4>Objective: Controlling and Manipulating the Information Environment</h4>
-              <ul className="list-disc ml-8">
-                <li>CCI (Cyber Capability Index): 0.6</li>
-                <li>Reasoning: The mishandling of personal information highlights weaknesses in information control. However, enforcement actions to rectify this indicate efforts to improve capabilities.</li>
-              </ul>
-              <ul className="list-disc ml-8">
-                <li>CII (Cyber Intent Index): 0.5</li>
-                <li>Reasoning: While the breach shows vulnerabilities, the corrective measures reflect the intent to manage the flow of personal data effectively.</li>
-              </ul>
-              <h4>Final Weighted Score Calculation</h4>
-              <ul className="list-disc ml-8">
-                <li>
-                  Controlling and Manipulating the Information Environment
-                  <br />
-                  CCI: 0.6, CII: 0.5
-                  <br />
-                  Weighted Score: 0.6 × 0.5 × 1 = 0.30
-                </li>
-              </ul>
-
-              {/* 5.2.9 Incident 9 */}
-              <h3>5.2.9 Incident 9: Inauguration of the National Data Bureau</h3>
-              <p>Date: October 25, 2023</p>
-              <h4>Objective: Growing National Cyber and Commercial Technology Competence</h4>
-              <ul className="list-disc ml-8">
-                <li>CCI (Cyber Capability Index): 0.7</li>
-                <li>Reasoning: The establishment of the National Data Bureau demonstrates significant competence in regulating and developing the data element market, positioning China as a leader in this area.</li>
-              </ul>
-              <ul className="list-disc ml-8">
-                <li>CII (Cyber Intent Index): 0.7</li>
-                <li>Reasoning: The intent to formalize and dominate the emerging data market is clear, showcasing a strategic focus on leveraging data as a national asset.</li>
-              </ul>
-              <h4>Final Weighted Score Calculation</h4>
-              <ul className="list-disc ml-8">
-                <li>
-                  Growing National Cyber and Commercial Technology Competence
-                  <br />
-                  CCI: 0.7, CII: 0.7
-                  <br />
-                  Weighted Score: 0.7 × 0.7 × 1 = 0.49
-                </li>
-              </ul>
-
-              {/* 5.2.10 Incident 10 */}
-              <h3>5.2.10 Incident 10: Recording Data as an Asset in Financial Statements</h3>
-              <p>Date: August 1, 2023</p>
-              <h4>Objective: Growing National Cyber and Commercial Technology Competence</h4>
-              <ul className="list-disc ml-8">
-                <li>CCI (Cyber Capability Index): 0.6</li>
-                <li>Reasoning: Recognizing data as an asset in financial statements indicates China's progress in incorporating data into its economic framework, enhancing its commercial technology competence.</li>
-              </ul>
-              <ul className="list-disc ml-8">
-                <li>CII (Cyber Intent Index): 0.6</li>
-                <li>Reasoning: The intent to drive the formalization of data as an economic asset is evident, aiming to integrate data into corporate and financial structures.</li>
-              </ul>
-              <h4>Final Weighted Score Calculation</h4>
-              <ul className="list-disc ml-8">
-                <li>
-                  Growing National Cyber and Commercial Technology Competence
-                  <br />
-                  CCI: 0.6, CII: 0.6
-                  <br />
-                  Weighted Score: 0.6 × 0.6 × 1 = 0.36
-                </li>
-              </ul>
+                <h3>NOT FINISHED</h3>
+              </>
+            )}
+              {chapter.id === "chapter5_3" && (
+              <>
+                <h3>NOT FINISHED</h3>
               </>
             )}
       
